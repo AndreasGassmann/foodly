@@ -9,21 +9,21 @@
 
     <ion-slides>
       <ion-slide>
-        <ion-card>
+        <ion-card tappable (click)="openDetail()">
           <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
           <div class="card-title">{{lastId}}</div>
           <div class="card-subtitle">1.50 SFr.-</div>
         </ion-card>
       </ion-slide>
       <ion-slide>
-        <ion-card>
+        <ion-card tappable (click)="openDetail()">
           <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
           <div class="card-title">Cevelat</div>
           <div class="card-subtitle">1.50 SFr.-</div>
         </ion-card>
       </ion-slide>
       <ion-slide>
-        <ion-card>
+        <ion-card tappable (click)="openDetail()">
           <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
           <div class="card-title">Cevelat</div>
           <div class="card-subtitle">1.50 SFr.-</div>
@@ -37,7 +37,7 @@
 </ion-content>
 
 <ion-footer *ngIf="lastId > 0">
-  <ion-card>
+  <ion-card tappable (click)="openDetail()">
     <img src="{{products[lastId]}}" height="100px"/>
 
     <ion-card-content>
