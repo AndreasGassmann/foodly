@@ -1,10 +1,12 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams, Platform, Slides} from 'ionic-angular';
 import {OnboardingPage} from "../onboarding/onboarding";
 import {DetailPage} from "../detail/detail";
 import {CheckoutPage} from "../checkout/checkout";
+import { ViewChild } from '@angular/core';
 declare var cordova;
 declare var Quagga;
+declare var MediaStreamTrack;
 
 /*
  Generated class for the Camera page.
@@ -17,8 +19,9 @@ declare var Quagga;
   templateUrl: 'camera.html'
 })
 export class CameraPage {
+  @ViewChild(Slides) slides: Slides;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private platform: Platform) {
 
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
@@ -27,63 +30,48 @@ export class CameraPage {
 
   }
 
+  goToSlide() {
+    this.slides.slideTo(2, 500);
+  }
+
   ionViewDidLoad() {
-    
-    navigator.mediaDevices.enumerateDevices()
-      .then(function(devices) {
-        devices.forEach(function(device) {
-          console.log(device.kind + ": " + device.label +
-            " id = " + device.deviceId);
-        });
-      })
-      .catch(function(err) {
-        console.log(err.name + ": " + err.message);
-      });
-
-
-    navigator.mediaDevices.enumerateDevices()
-      .then(devices => devices.filter(device => device.kind === 'videoinput' && device.label.indexOf('back') !== -1))
-      .then(backFacingDevices =>{
-
-        // console.log(backFacingDevices.map(device => device.deviceId)
-
-        Quagga.init(
-          {
-            inputStream: {
-              name: "Live",
-              type: "LiveStream",
-              constraints: {
-                width: {min: 640},
-                height: {min: 480},
-                aspectRatio: {min: 1, max: 100},
-                facingMode: "environment",
+    MediaStreamTrack.getSources(function (sources) {
+      for (var i = 0; i < sources.length; i++) {
+        if (sources[i].facing == 'environment' && sources[i].kind == 'video') {
+          Quagga.init(
+            {
+              frequency: 2, // allow a maximum of 5 scans per second
+              inputStream: {
+                name: "Live",
+                type: "LiveStream",
+                constraints: {
+                  //width: {min: 640},
+                  //height: {min: 480},
+                  //aspectRatio: {min: 1, max: 100},
+                  deviceId: sources[i].id
+                },
+                target: document.querySelector('#live-view')    // Or '#yourElement' (optional)
               },
-              target: document.querySelector('#live-view')    // Or '#yourElement' (optional)
-            },
-            locator: {patchSize: "medium", halfSample: true},
-            numOfWorkers: 4,
-            decoder: {"readers": [{"format": "ean_reader", "config": {}}]},
-            locate: true
+              locator: {patchSize: "medium", halfSample: true},
+              numOfWorkers: 4,
+              decoder: {"readers": [{"format": "ean_reader", "config": {}}]},
+              locate: true
+            }, function (err) {
+              if (err) {
+                console.log(err);
+                return
+              }
+              Quagga.start();
 
-          }, function (err) {
-            if (err) {
-              console.log(err);
-              return
-            }
-            console.log("Initialization finished. Ready to start");
-            Quagga.start();
-
-            Quagga.onDetected(data => {
-              console.log(data.codeResult.code);
+              Quagga.onDetected(data => {
+                alert(data.codeResult.code);
+              });
             });
-          });
 
-
-      });
-
-
-
-
+          return;
+        }
+      }
+    });
   }
 
   openDetail() {

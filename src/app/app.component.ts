@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import {CameraPage} from "../pages/camera/camera";
+import { SlidesPage } from "../pages/slides/slides";
 
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage = CameraPage;
+  rootPage = SlidesPage;
 
   constructor(platform: Platform) {
     platform.ready().then(() => {
