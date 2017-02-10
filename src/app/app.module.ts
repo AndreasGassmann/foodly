@@ -21,7 +21,7 @@ import {OnboardingPage} from "../pages/onboarding/onboarding";
     ContactPage,
     HomePage,
     MapPage,
-    TabsPage
+    TabsPage,
     OnboardingPage,
     CameraPage,
     DetailPage,
