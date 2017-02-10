@@ -30,7 +30,7 @@ import {SlidesPage} from "../pages/slides/slides";
     SlidesPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp, { mode:'md', tabsPlacement: 'top' })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

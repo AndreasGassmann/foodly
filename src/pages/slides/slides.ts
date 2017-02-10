@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {DetailPage} from "../detail/detail";
 import {TabsPage} from "../tabs/tabs";
+import {OnboardingPage} from "../onboarding/onboarding";
 
 @Component({
   selector: 'page-slides',
@@ -33,7 +34,7 @@ export class SlidesPage {
   }
 
   startApp() {
-    this.navCtrl.setRoot(TabsPage);
+    this.navCtrl.setRoot(OnboardingPage);
   }
 
 }
