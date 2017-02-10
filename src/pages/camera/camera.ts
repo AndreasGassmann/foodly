@@ -1,9 +1,5 @@
 import {Component} from '@angular/core';
-<<<<<<< HEAD
-import {NavController, NavParams, Platform} from 'ionic-angular';
-=======
-import {NavController, NavParams, Slides} from 'ionic-angular';
->>>>>>> 1a9c3665b743b76e20ecb04d1ea5c078ee5ac18c
+import {NavController, NavParams, Platform, Slides} from 'ionic-angular';
 import {OnboardingPage} from "../onboarding/onboarding";
 import {DetailPage} from "../detail/detail";
 import {CheckoutPage} from "../checkout/checkout";
