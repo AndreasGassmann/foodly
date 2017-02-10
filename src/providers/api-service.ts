@@ -12,6 +12,7 @@ export class ApiService {
   }
 
   getDataForIncredient() {
+
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
     headers.append('Authorization', 'Basic aDRjSzR0SDBOT2c3NUhqZkszMzlLbE9scGEzOWZKenhYdzo=');
@@ -36,8 +37,7 @@ export class ApiService {
     };
 
     return this.http.post(this.eaternityUrl + '/api/recipes?full-resource=true', data, {
-      headers: headers
-    })
+    });
   }
 
 }

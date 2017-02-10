@@ -6,7 +6,10 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { ApiService } from '../providers/api-service';
-import {ScannerPage} from "../pages/scanner/scanner";
+import {CheckoutPage} from "../pages/checkout/checkout";
+import {DetailPage} from "../pages/detail/detail";
+import {CameraPage} from "../pages/camera/camera";
+import {OnboardingPage} from "../pages/onboarding/onboarding";
 
 @NgModule({
   declarations: [
@@ -15,7 +18,10 @@ import {ScannerPage} from "../pages/scanner/scanner";
     ContactPage,
     HomePage,
     TabsPage,
-    ScannerPage
+    OnboardingPage,
+    CameraPage,
+    DetailPage,
+    CheckoutPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -27,7 +33,10 @@ import {ScannerPage} from "../pages/scanner/scanner";
     ContactPage,
     HomePage,
     TabsPage,
-    ScannerPage
+    OnboardingPage,
+    CameraPage,
+    DetailPage,
+    CheckoutPage
   ],
   providers: [
     {

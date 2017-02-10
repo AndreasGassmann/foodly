@@ -3,22 +3,21 @@ import { NavController, NavParams } from 'ionic-angular';
 declare var cordova;
 
 /*
-  Generated class for the Scanner page.
+  Generated class for the Camera page.
 
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 */
 @Component({
-  selector: 'page-scanner',
-  templateUrl: 'scanner.html'
+  selector: 'page-camera',
+  templateUrl: 'camera.html'
 })
-
-export class ScannerPage {
+export class CameraPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ScannerPage');
+    console.log('ionViewDidLoad CameraPage');
   }
 
   openScanner(){
