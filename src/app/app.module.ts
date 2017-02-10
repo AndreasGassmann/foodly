@@ -2,7 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
+import { UmweltPage } from '../pages/umwelt/umwelt';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -19,7 +19,7 @@ import {SlidesPage} from "../pages/slides/slides";
   declarations: [
     MyApp,
     AboutPage,
-    ContactPage,
+    UmweltPage,
     HomePage,
     MapPage,
     TabsPage,
@@ -36,7 +36,7 @@ import {SlidesPage} from "../pages/slides/slides";
   entryComponents: [
     MyApp,
     AboutPage,
-    ContactPage,
+    UmweltPage,
     HomePage,
     MapPage,
     TabsPage,
