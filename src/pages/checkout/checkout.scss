@@ -1,3 +1,41 @@
 page-checkout {
 
+    .item-md {
+        display:   flex;
+        flex-flow: row nowrap;
+
+        ion-avatar {
+            &[item-left] {
+                margin: 0;
+            }
+
+            .ion-avatar {
+                flex: 0 1 60px;
+            }
+
+            img {
+                width:         80px;
+                height:        80px;
+                border-radius: 0;
+            }
+        }
+
+        &.item-block {
+            .item-inner {
+                flex:    1 1 auto;
+                padding: 8px 16px;
+            }
+        }
+
+        h3 {
+            margin-left: auto;
+        }
+    }
+
+    ion-label {
+        display:     flex;
+        flex-flow:   row nowrap;
+        align-items: baseline;
+    }
+
 }

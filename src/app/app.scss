@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/v2/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +13,31 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+// Custom Font: Monserrat
+// --------------------------------------------------
+
+// Normal
+@font-face {
+    font-family: 'Montserrat';
+    font-style:  normal;
+    font-weight: 400;
+    src:         url('../assets/fonts/montserrat-regular.woff2') format('woff2');
+}
+
+// Bold
+@font-face {
+    font-family: 'Montserrat Bold';
+    font-style:  normal;
+    font-weight: 700;
+    src:         url('../assets/fonts/montserrat-bold.woff2') format('woff2');
+}
+
+// MD Headings
+// --------------------------------------------------
+
+.item-md {
+    h2 {
+        font-family: "Montserrat Bold";
+    }
+}
