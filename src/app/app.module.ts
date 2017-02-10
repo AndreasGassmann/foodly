@@ -5,6 +5,7 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { ApiService } from '../providers/api-service';
 import {ScannerPage} from "../pages/scanner/scanner";
 
 @NgModule({
@@ -28,6 +29,12 @@ import {ScannerPage} from "../pages/scanner/scanner";
     TabsPage,
     ScannerPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {
+      provide: ErrorHandler,
+      useClass: IonicErrorHandler
+    },
+    ApiService
+  ]
 })
 export class AppModule {}
