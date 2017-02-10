@@ -1,8 +1,13 @@
 import {Component} from '@angular/core';
+<<<<<<< HEAD
 import {NavController, NavParams, Platform} from 'ionic-angular';
+=======
+import {NavController, NavParams, Slides} from 'ionic-angular';
+>>>>>>> 1a9c3665b743b76e20ecb04d1ea5c078ee5ac18c
 import {OnboardingPage} from "../onboarding/onboarding";
 import {DetailPage} from "../detail/detail";
 import {CheckoutPage} from "../checkout/checkout";
+import { ViewChild } from '@angular/core';
 declare var cordova;
 declare var Quagga;
 declare var MediaStreamTrack;
@@ -18,6 +23,7 @@ declare var MediaStreamTrack;
   templateUrl: 'camera.html'
 })
 export class CameraPage {
+  @ViewChild(Slides) slides: Slides;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private platform: Platform) {
 
@@ -28,7 +34,12 @@ export class CameraPage {
 
   }
 
+  goToSlide() {
+    this.slides.slideTo(2, 500);
+  }
+
   ionViewDidLoad() {
+<<<<<<< HEAD
     MediaStreamTrack.getSources(function (sources) {
       for (var i = 0; i < sources.length; i++) {
         if (sources[i].facing == 'environment' && sources[i].kind == 'video') {
@@ -45,6 +56,37 @@ export class CameraPage {
                   deviceId: sources[i].id
                 },
                 target: document.querySelector('#live-view')    // Or '#yourElement' (optional)
+=======
+
+    navigator.mediaDevices.enumerateDevices()
+      .then(function(devices) {
+        devices.forEach(function(device) {
+          console.log(device.kind + ": " + device.label +
+            " id = " + device.deviceId);
+        });
+      })
+      .catch(function(err) {
+        console.log(err.name + ": " + err.message);
+      });
+
+
+    navigator.mediaDevices.enumerateDevices()
+      .then(devices => devices.filter(device => device.kind === 'videoinput' && device.label.indexOf('back') !== -1))
+      .then(backFacingDevices =>{
+
+        // console.log(backFacingDevices.map(device => device.deviceId)
+
+        Quagga.init(
+          {
+            inputStream: {
+              name: "Live",
+              type: "LiveStream",
+              constraints: {
+                width: {min: 768},
+                height: {min: 480},
+                aspectRatio: {min: 1, max: 100},
+                facingMode: "environment",
+>>>>>>> 1a9c3665b743b76e20ecb04d1ea5c078ee5ac18c
               },
               locator: {patchSize: "medium", halfSample: true},
               numOfWorkers: 4,

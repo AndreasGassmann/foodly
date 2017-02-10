@@ -15,4 +15,32 @@
 
 <ion-content padding>
 
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item (click)="openDetail(item)">
+        <ion-avatar item-left>
+          <img src="{{item.image}}">
+        </ion-avatar>
+        <h2>{{item.count}} {{item.name}}</h2>
+        <h3>{{item.price}}</h3>
+        <p>{{item.category}}</p>
+      </ion-item>
+      <!--
+      <ion-item-options side="left">
+        <button ion-button (click)="favorite(item)">Favorite</button>
+        <button ion-button color="danger" (click)="share(item)">Share</button>
+      </ion-item-options>
+      -->
+      <ion-item-options side="right">
+        <button ion-button (click)="removeItem(item)">remove</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <!-- Float the icon left -->
+  <button ion-button block icon-left>
+    <ion-icon name="home"></ion-icon>
+    {{calculateTotalItems()}}
+    {{calculateTotalPrice()}}
+  </button>
 </ion-content>
