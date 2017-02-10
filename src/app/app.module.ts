@@ -5,7 +5,14 @@ import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+
 import {MapPage} from "../pages/map/map";
+import { ApiService } from '../providers/api-service';
+import {CheckoutPage} from "../pages/checkout/checkout";
+import {DetailPage} from "../pages/detail/detail";
+import {CameraPage} from "../pages/camera/camera";
+import {OnboardingPage} from "../pages/onboarding/onboarding";
+
 
 @NgModule({
   declarations: [
@@ -15,6 +22,10 @@ import {MapPage} from "../pages/map/map";
     HomePage,
     MapPage,
     TabsPage
+    OnboardingPage,
+    CameraPage,
+    DetailPage,
+    CheckoutPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -26,8 +37,18 @@ import {MapPage} from "../pages/map/map";
     ContactPage,
     HomePage,
     MapPage,
-    TabsPage
+    TabsPage,
+    OnboardingPage,
+    CameraPage,
+    DetailPage,
+    CheckoutPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {
+      provide: ErrorHandler,
+      useClass: IonicErrorHandler
+    },
+    ApiService
+  ]
 })
 export class AppModule {}
