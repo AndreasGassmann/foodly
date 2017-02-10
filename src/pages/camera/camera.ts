@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
-import {NavController, NavParams} from 'ionic-angular';
+import {NavController, NavParams, Slides} from 'ionic-angular';
 import {OnboardingPage} from "../onboarding/onboarding";
 import {DetailPage} from "../detail/detail";
 import {CheckoutPage} from "../checkout/checkout";
+import { ViewChild } from '@angular/core';
 declare var cordova;
 declare var Quagga;
 
@@ -17,6 +18,7 @@ declare var Quagga;
   templateUrl: 'camera.html'
 })
 export class CameraPage {
+  @ViewChild(Slides) slides: Slides;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
@@ -27,8 +29,12 @@ export class CameraPage {
 
   }
 
+  goToSlide() {
+    this.slides.slideTo(2, 500);
+  }
+
   ionViewDidLoad() {
-    
+
     navigator.mediaDevices.enumerateDevices()
       .then(function(devices) {
         devices.forEach(function(device) {
@@ -53,7 +59,7 @@ export class CameraPage {
               name: "Live",
               type: "LiveStream",
               constraints: {
-                width: {min: 640},
+                width: {min: 768},
                 height: {min: 480},
                 aspectRatio: {min: 1, max: 100},
                 facingMode: "environment",
