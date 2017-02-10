@@ -3,7 +3,8 @@ import {NavController, NavParams, Slides} from 'ionic-angular';
 import {OnboardingPage} from "../onboarding/onboarding";
 import {DetailPage} from "../detail/detail";
 import {CheckoutPage} from "../checkout/checkout";
-import {ViewChild} from '@angular/core';
+import { ViewChild } from '@angular/core';
+import {CartPage} from "../cart/cart";
 declare var cordova;
 declare var Quagga;
 declare var MediaStreamTrack;
@@ -116,6 +117,10 @@ export class CameraPage {
 
   ionViewDidLeave() {
     Quagga.stop();
+  }
+
+  openCart() {
+    this.navCtrl.push(CartPage);
   }
 
   openDetail() {
