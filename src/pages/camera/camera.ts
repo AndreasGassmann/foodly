@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {OnboardingPage} from "../onboarding/onboarding";
+import {DetailPage} from "../detail/detail";
+import {CheckoutPage} from "../checkout/checkout";
 declare var cordova;
 
 /*
@@ -14,11 +17,27 @@ declare var cordova;
 })
 export class CameraPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    if(!localStorage.getItem("firstStart")){
+      this.navCtrl.push(OnboardingPage);
+    }
+    localStorage.setItem("firstStart", "no");
+
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CameraPage');
   }
+
+  openDetail(){
+    this.navCtrl.push(DetailPage);
+  }
+
+  openCheckout(){
+    this.navCtrl.push(CheckoutPage);
+  }
+
 
   openScanner(){
 
