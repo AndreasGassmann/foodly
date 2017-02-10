@@ -4,42 +4,63 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>camera</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content>
-  <ion-slides>
-    <ion-slide>
-      <h1>Product 1</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Product 2</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Product 3</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Product 4</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Product 5</h1>
-    </ion-slide>
-    <ion-slide>
-      <h1>Product 6</h1>
-    </ion-slide>
-  </ion-slides>
-  <div id="live-view"></div>
+  <div id="live-view">
 
+    <ion-slides>
+      <ion-slide>
+        <ion-card>
+          <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
+          <div class="card-title">Cevelat</div>
+          <div class="card-subtitle">1.50 SFr.-</div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
+          <div class="card-title">Cevelat</div>
+          <div class="card-subtitle">1.50 SFr.-</div>
+        </ion-card>
+      </ion-slide>
+      <ion-slide>
+        <ion-card>
+          <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
+          <div class="card-title">Cevelat</div>
+          <div class="card-subtitle">1.50 SFr.-</div>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
 
-  <button ion-button (click)="openDetail()">Detail</button>
-  <button ion-button (click)="openCheckout()">Checkout</button>
-  <button ion-button (click)="openScanner()">Button</button>
-
-
+  </div>
 </ion-content>
+
+<ion-footer *ngIf="lastId > 0">
+  <ion-card>
+    <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
+
+    <ion-card-content>
+      <p>Cervelat</p>
+    </ion-card-content>
+
+    <ion-row>
+      <ion-col>
+        <button (click)="openDetail()" ion-button icon-left clear small>
+          <ion-icon name="log-in"></ion-icon>
+          <div>Details</div>
+        </button>
+      </ion-col>
+      <ion-col>
+        <button ion-button icon-left clear small>
+          <ion-icon name="close"></ion-icon>
+          <div>Dismiss</div>
+        </button>
+      </ion-col>
+      <ion-col center text-center>
+        <ion-note>
+          1.5 SFr.-
+        </ion-note>
+      </ion-col>
+    </ion-row>
+
+  </ion-card>
+</ion-footer>

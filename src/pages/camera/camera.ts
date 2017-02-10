@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, NgZone} from '@angular/core';
 import {NavController, NavParams, Platform, Slides} from 'ionic-angular';
 import {OnboardingPage} from "../onboarding/onboarding";
 import {DetailPage} from "../detail/detail";
@@ -21,7 +21,9 @@ declare var MediaStreamTrack;
 export class CameraPage {
   @ViewChild(Slides) slides: Slides;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private platform: Platform) {
+  private lastId = 0;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private platform: Platform, private zone:NgZone) {
 
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
@@ -45,9 +47,6 @@ export class CameraPage {
                 name: "Live",
                 type: "LiveStream",
                 constraints: {
-                  //width: {min: 640},
-                  //height: {min: 480},
-                  //aspectRatio: {min: 1, max: 100},
                   deviceId: sources[i].id
                 },
                 target: document.querySelector('#live-view')    // Or '#yourElement' (optional)
@@ -63,8 +62,11 @@ export class CameraPage {
               }
               Quagga.start();
 
+              let self = this;
               Quagga.onDetected(data => {
-                alert(data.codeResult.code);
+                self.lastId = data.codeResult.code;
+
+
               });
             });
 
@@ -108,7 +110,6 @@ export class CameraPage {
         disableSuccessBeep: true // iOS
       }
     );
-
   }
 
 }
