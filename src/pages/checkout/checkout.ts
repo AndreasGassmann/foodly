@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {DetailPage} from "../detail/detail";
 
 /*
   Generated class for the Checkout page.
@@ -12,11 +13,53 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'checkout.html'
 })
 export class CheckoutPage {
+  items: any = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.items.push({
+      count: 1,
+      name: 'Finn',
+      image: 'https://unsplash.it/200/?random',
+      category: '',
+      price: 5
+    });
+
+    this.items.push({
+      count: 1,
+      name: 'Finn',
+      image: 'https://unsplash.it/201/?random',
+      category: '',
+      price: 3
+    });
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CheckoutPage');
   }
 
+  openDetail(item) {
+    this.navCtrl.push(DetailPage, {
+      item: item
+    })
+  }
+
+  removeItem(item) {
+
+  }
+
+  calculateTotalPrice() {
+    let price = 0;
+    this.items.forEach(i => {
+      price += i.count * i.price;
+    });
+    return price;
+  }
+
+  calculateTotalItems() {
+    let count = 0;
+    this.items.forEach(i => {
+      count += i.count;
+    });
+    return count;
+  }
 }
