@@ -4,38 +4,41 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-content>
-  <div id="live-view">
-
+<ion-content id="live-view">
     <ion-slides>
       <ion-slide>
         <ion-card tappable (click)="openDetail()">
           <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
-          <div class="card-title">{{lastId}}</div>
+            <div class="swiper-content">
+          <div class="card-title">{{ lastId }}</div>
           <div class="card-subtitle">1.50 SFr.-</div>
+                </div>
         </ion-card>
       </ion-slide>
       <ion-slide>
         <ion-card tappable (click)="openDetail()">
           <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
+            <div class="swiper-content">
           <div class="card-title">Cevelat</div>
-          <div class="card-subtitle">1.50 SFr.-</div>
+          <div class="card-subtitle">1.50 SFr</div>
+                </div>
         </ion-card>
       </ion-slide>
       <ion-slide>
         <ion-card tappable (click)="openDetail()">
           <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
+            <div class="swiper-content">
           <div class="card-title">Cevelat</div>
-          <div class="card-subtitle">1.50 SFr.-</div>
+          <div class="card-subtitle">1.50 SFr</div>
+                </div>
         </ion-card>
       </ion-slide>
     </ion-slides>
-  </div>
 </ion-content>
 
 <ion-footer *ngIf="lastId > 0">
   <ion-card tappable (click)="openDetail()">
-    <img src="{{products[lastId]}}" height="100px"/>
+    <img src="{{ products[lastId] }}" height="100px"/>
 
     <ion-card-content>
       <p>Cervelat </p>
@@ -56,7 +59,7 @@
       </ion-col>
       <ion-col center text-center>
         <ion-note>
-          1.5 SFr.-
+          1.5 SFr
         </ion-note>
       </ion-col>
     </ion-row>
