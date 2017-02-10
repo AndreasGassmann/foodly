@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {CameraPage} from "../camera/camera";
 
 /*
   Generated class for the Onboarding page.
@@ -17,6 +18,11 @@ export class OnboardingPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad OnboardingPage');
+  }
+
+  public setClientType(type) {
+    localStorage.setItem('clientType', type);
+    this.navCtrl.push(CameraPage);
   }
 
 }

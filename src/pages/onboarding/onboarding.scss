@@ -1,3 +1,21 @@
 page-onboarding {
-
+  .button-wrapper {
+    div {
+      width: 50%;
+      float: left;
+      height: 200px;
+      background: blue;
+      text-align: center;
+      font-size: 20px;
+      &:nth-of-type(2) {
+        background: yellow;
+      }
+      &:nth-of-type(3) {
+        background: green;
+      }
+      &:nth-of-type(4) {
+        background: red;
+      }
+    }
+  }
 }
