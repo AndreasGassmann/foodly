@@ -13,6 +13,8 @@ import {DetailPage} from "../pages/detail/detail";
 import {CameraPage} from "../pages/camera/camera";
 import {OnboardingPage} from "../pages/onboarding/onboarding";
 import {SlidesPage} from "../pages/slides/slides";
+import {CartPage} from "../pages/cart/cart";
+import {CartService} from "../providers/cart-service";
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import {SlidesPage} from "../pages/slides/slides";
     CameraPage,
     DetailPage,
     CheckoutPage,
-    SlidesPage
+    SlidesPage,
+    CartPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, { mode:'md', tabsPlacement: 'top' })
@@ -44,14 +47,16 @@ import {SlidesPage} from "../pages/slides/slides";
     CameraPage,
     DetailPage,
     CheckoutPage,
-    SlidesPage
+    SlidesPage,
+    CartPage
   ],
   providers: [
     {
       provide: ErrorHandler,
       useClass: IonicErrorHandler
     },
-    ApiService
+    ApiService,
+    CartService
   ]
 })
 export class AppModule {}
