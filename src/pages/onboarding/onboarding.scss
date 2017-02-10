@@ -1,21 +1,28 @@
 page-onboarding {
-  .button-wrapper {
-    div {
+  .profile--selector {
+    .profiles {
       width: 50%;
       float: left;
-      height: 200px;
+      height: 100px;
       background: blue;
-      text-align: center;
+      text-align: left;
       font-size: 20px;
-      &:nth-of-type(2) {
-        background: yellow;
-      }
-      &:nth-of-type(3) {
-        background: green;
-      }
-      &:nth-of-type(4) {
-        background: red;
-      }
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .profiles--sparfuchs {
+      background: color($colors, sparfuchs);
+    }
+    .profiles--gesudnheit {
+      background: color($colors, gesudnheit);
+    }
+    .profiles--umwelt {
+      background: color($colors, umwelt);
+    }
+    .profiles--lokal {
+      background: color($colors, lokal);
     }
   }
 }

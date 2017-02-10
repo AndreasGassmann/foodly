@@ -1,31 +1,62 @@
-<!--
-  Generated template for the Onboarding page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar>
-    <ion-title>onboarding</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-  <div class="button-wrapper">
-    <div (click)="setClientType(0)">
-      Sparfuchs
-    </div>
-    <div (click)="setClientType(1)">
-      Umwelt
-    </div>
-    <div (click)="setClientType(2)">
-      Lokal
-    </div>
-    <div (click)="setClientType(3)">
-      Gesundheit
-    </div>
-  </div>
+<ion-content no-padding>
+  <ion-row>
+    <ion-col>
+      <h3 text-center>Was bist du für ein Typ?</h3>
+    </ion-col>
+  </ion-row>
+  <ion-grid no-padding class="profile--selector">
+          <ion-row>
+            <ion-col class="profiles profiles--sparfuchs" width-12 (click)="setClientType(0)">
+              <ion-row>
+                <ion-col width-75>
+                  Sparfuchs
+                </ion-col>
+                <ion-col>
+                  <ion-icon width-25 name="heart"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="profiles profiles--gesudnheit" width-12 (click)="setClientType(1)">
+              <ion-row>
+                <ion-col width-75>
+                  Gesundheit
+                </ion-col>
+                <ion-col>
+                  <ion-icon width-25 name="heart"></ion-icon>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+    <ion-row>
+      <ion-col class="profiles profiles--lokal" width-12 (click)="setClientType(2)">
+        <ion-row>
+          <ion-col width-75>
+            Lokalist
+          </ion-col>
+          <ion-col>
+            <ion-icon width-25 name="heart"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="profiles profiles--umwelt" width-12 (click)="setClientType(3)">
+        <ion-row>
+          <ion-col width-75>
+            Umwelt
+          </ion-col>
+          <ion-col>
+            <ion-icon width-25 name="heart"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-row>
+    <ion-col>
+      <button ion-button round>LOSLEGEN<ion-icon name="ios-arrow-forward"></ion-icon></button>
+    </ion-col>
+  </ion-row>
 </ion-content>
