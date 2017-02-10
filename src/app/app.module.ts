@@ -12,6 +12,7 @@ import {CheckoutPage} from "../pages/checkout/checkout";
 import {DetailPage} from "../pages/detail/detail";
 import {CameraPage} from "../pages/camera/camera";
 import {OnboardingPage} from "../pages/onboarding/onboarding";
+import {SlidesPage} from "../pages/slides/slides";
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import {OnboardingPage} from "../pages/onboarding/onboarding";
     OnboardingPage,
     CameraPage,
     DetailPage,
-    CheckoutPage
+    CheckoutPage,
+    SlidesPage
   ],
   imports: [
     IonicModule.forRoot(MyApp)
@@ -41,7 +43,8 @@ import {OnboardingPage} from "../pages/onboarding/onboarding";
     OnboardingPage,
     CameraPage,
     DetailPage,
-    CheckoutPage
+    CheckoutPage,
+    SlidesPage
   ],
   providers: [
     {
