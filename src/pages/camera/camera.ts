@@ -1,5 +1,5 @@
 import {Component, NgZone} from '@angular/core';
-import {NavController, NavParams, Platform, Slides} from 'ionic-angular';
+import {NavController, NavParams, Slides} from 'ionic-angular';
 import {OnboardingPage} from "../onboarding/onboarding";
 import {DetailPage} from "../detail/detail";
 import {CheckoutPage} from "../checkout/checkout";
@@ -22,13 +22,19 @@ export class CameraPage {
   @ViewChild(Slides) slides: Slides;
 
   private lastId = 0;
+  private products = {
+    '7640150491001': 'http://static.wixstatic.com/media/8ef132_db0a53c0917c4d118061767f65a37452.png_srz_355_316_85_22_0.50_1.20_0.00_png_srz',
+    '7610097111072': 'http://limon.ch/wp-content/uploads/2015/09/rivella.jpg'
+  };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private platform: Platform, private zone:NgZone) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private zone:NgZone) {
 
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
     }
     localStorage.setItem("firstStart", "no");
+
+
 
   }
 
@@ -37,12 +43,15 @@ export class CameraPage {
   }
 
   ionViewDidLoad() {
+
+    let self = this;
+
     MediaStreamTrack.getSources(function (sources) {
       for (var i = 0; i < sources.length; i++) {
         if (sources[i].facing == 'environment' && sources[i].kind == 'video') {
           Quagga.init(
             {
-              frequency: 2, // allow a maximum of 5 scans per second
+              frequency: 5, // allow a maximum of 5 scans per second
               inputStream: {
                 name: "Live",
                 type: "LiveStream",
@@ -62,11 +71,10 @@ export class CameraPage {
               }
               Quagga.start();
 
-              let self = this;
               Quagga.onDetected(data => {
-                self.lastId = data.codeResult.code;
-
-
+                self.zone.run(() =>{
+                  self.lastId = data.codeResult.code;
+                });
               });
             });
 

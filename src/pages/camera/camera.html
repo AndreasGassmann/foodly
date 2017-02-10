@@ -11,7 +11,7 @@
       <ion-slide>
         <ion-card>
           <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
-          <div class="card-title">Cevelat</div>
+          <div class="card-title">{{lastId}}</div>
           <div class="card-subtitle">1.50 SFr.-</div>
         </ion-card>
       </ion-slide>
@@ -32,14 +32,16 @@
     </ion-slides>
 
   </div>
+
+
 </ion-content>
 
 <ion-footer *ngIf="lastId > 0">
   <ion-card>
-    <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
+    <img src="{{products[lastId]}}" height="100px"/>
 
     <ion-card-content>
-      <p>Cervelat</p>
+      <p>Cervelat </p>
     </ion-card-content>
 
     <ion-row>
@@ -50,7 +52,7 @@
         </button>
       </ion-col>
       <ion-col>
-        <button ion-button icon-left clear small>
+        <button (click)="lastId = 0" ion-button icon-left clear small>
           <ion-icon name="close"></ion-icon>
           <div>Dismiss</div>
         </button>
