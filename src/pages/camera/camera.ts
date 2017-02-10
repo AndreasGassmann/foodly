@@ -35,23 +35,22 @@ export class CameraPage {
     localStorage.setItem("firstStart", "no");
 
 
-
-
   }
 
   goToSlide() {
     this.slides.slideTo(2, 500);
   }
 
-  ionViewDidLoad(){
+  ionViewDidLoad() {
     let self = this;
-    if(MediaStreamTrack.getSources){
+
+    if (MediaStreamTrack.getSources) {
       MediaStreamTrack.getSources(function (sources) {
         for (var i = 0; i < sources.length; i++) {
           if (sources[i].facing == 'environment' && sources[i].kind == 'video') {
             Quagga.init(
               {
-                frequency: 5, // allow a maximum of 5 scans per second
+                //frequency: 5, // allow a maximum of 5 scans per second
                 inputStream: {
                   name: "Live",
                   type: "LiveStream",
@@ -69,13 +68,16 @@ export class CameraPage {
                   console.log(err);
                   return
                 }
-
-                Quagga.onDetected(data => {
-                  self.zone.run(() => {
-                    self.lastId = data.codeResult.code;
-                  });
-                });
+                Quagga.start();
               });
+
+
+            Quagga.onDetected(data => {
+              self.zone.run(() => {
+                self.lastId = data.codeResult.code;
+              });
+            });
+
 
             return;
           }
@@ -91,6 +93,12 @@ export class CameraPage {
             target: document.querySelector('#live-view')    // Or '#yourElement' (optional)
           },
           locator: {patchSize: "medium", halfSample: true},
+          debug: {
+            drawBoundingBox: true,
+            showFrequency: true,
+            drawScanline: true,
+            showPattern: true
+          },
           numOfWorkers: 4,
           decoder: {"readers": [{"format": "ean_reader", "config": {}}]},
           locate: true
@@ -99,23 +107,17 @@ export class CameraPage {
             console.log(err);
             return
           }
-
-          Quagga.onDetected(data => {
-            self.zone.run(() => {
-              self.lastId = data.codeResult.code;
-            });
-          });
+          Quagga.start();
         });
 
+
+      Quagga.onDetected(data => {
+        self.zone.run(() => {
+          self.lastId = data.codeResult.code;
+        });
+      });
+
     }
-  }
-
-  ionViewWillEnter() {
-    Quagga.start();
-  }
-
-  ionViewDidLeave() {
-    Quagga.stop();
   }
 
   openDetail() {
