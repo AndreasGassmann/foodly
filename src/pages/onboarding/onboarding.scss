@@ -1,9 +1,7 @@
 page-onboarding {
   .profile--selector {
+    height: 66.6%;
     .profiles {
-      width: 50%;
-      float: left;
-      height: 100px;
       background: blue;
       text-align: left;
       font-size: 20px;
@@ -11,6 +9,9 @@ page-onboarding {
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+   ion-row {
+      height: 25%;
     }
     .profiles--sparfuchs {
       background: color($colors, sparfuchs);
@@ -24,5 +25,11 @@ page-onboarding {
     .profiles--lokal {
       background: color($colors, lokal);
     }
+  }
+  .outside {
+    height:16.6%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

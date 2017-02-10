@@ -3,7 +3,10 @@ import {NavController, NavParams, Slides} from 'ionic-angular';
 import {OnboardingPage} from "../onboarding/onboarding";
 import {DetailPage} from "../detail/detail";
 import {CheckoutPage} from "../checkout/checkout";
-import {ViewChild} from '@angular/core';
+import { ViewChild } from '@angular/core';
+import {CartPage} from "../cart/cart";
+import {TabsPage} from "../tabs/tabs";
+
 declare var cordova;
 declare var Quagga;
 declare var MediaStreamTrack;
@@ -33,7 +36,6 @@ export class CameraPage {
       this.navCtrl.push(OnboardingPage);
     }
     localStorage.setItem("firstStart", "no");
-
 
   }
 
@@ -120,8 +122,12 @@ export class CameraPage {
     }
   }
 
+  openCart() {
+    this.navCtrl.push(CartPage);
+  }
+
   openDetail() {
-    this.navCtrl.push(DetailPage);
+    this.navCtrl.setRoot(TabsPage);
   }
 
   openCheckout() {
