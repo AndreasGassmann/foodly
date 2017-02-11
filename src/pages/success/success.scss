@@ -1,5 +1,28 @@
 page-success {
+h1{
+  font-size: 2.4rem;
+  text-align: center;
+  color: color($colors, white);
+  b{
+    font-weight: 600;
+  }
 
+}
+.coin{
+  width:80%;
+  height:auto;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+.div_coin{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+  .content {
+    background: color($colors, sparfuchs);
+  }
 
   @keyframes myanim {
   from { top: 0; }
