@@ -503,6 +503,7 @@ export class ItemRepository {
     let similarProducts = [];
     let similars = this.getSimilar(ean);
     console.log('getSimilars', similars);
+    similars.push(ean);
     if (similars) {
       similars.forEach(i => {
         similarProducts.push(this.getItemByEan(i));

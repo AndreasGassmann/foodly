@@ -1,5 +1,5 @@
 import {Component, NgZone} from '@angular/core';
-import {NavController, NavParams, Slides} from 'ionic-angular';
+import {NavController, NavParams, Slides, ToastController, Platform} from 'ionic-angular';
 import {OnboardingPage} from "../onboarding/onboarding";
 import {CheckoutPage} from "../checkout/checkout";
 import {ViewChild} from '@angular/core';
@@ -23,18 +23,16 @@ export class CameraPage {
   public item = null;
   public similars = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository, private cartSerivce: CartService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository, private cartSerivce: CartService, public toastCtrl: ToastController, private platform: Platform) {
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
+
+      if(this.platform.is('android')){
+        this.openScanner();
+      }
+
     }
     localStorage.setItem("firstStart", "no");
-
-  }
-
-  ngAfterViewInit() {
-    //this.slides.freeMode = true;
-    this.lastId = 7617400033557;
-    this.item = this._itemRepository.getItemByEan(7617400033557);
   }
 
   ionViewDidLoad() {
@@ -151,7 +149,15 @@ export class CameraPage {
 
   addProduct(item) {
     this.cartSerivce.addProduct(item);
-    alert("Produkt hinzugefügt");
+
+    this.lastId = 0;
+    this.item = null;
+
+    let toast = this.toastCtrl.create({
+      message: 'Produkt hinzugefügt',
+      duration: 3000
+    });
+    toast.present();
   }
 
   openCart() {
@@ -204,6 +210,5 @@ export class CameraPage {
 
   resetCamera() {
     this.lastId = 0;
-    this.item = this._itemRepository.getItemByEan(7640150491001);
   }
 }

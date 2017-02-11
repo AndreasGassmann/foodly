@@ -33,9 +33,9 @@ export class CartPage {
     let totalPrice = 0;
     this.cartItems.forEach(function (element) {
       if(element.quantity > 0) {
-        totalPrice += parseInt(element.price) * parseInt(element.quantity)
+        totalPrice += parseFloat(element.price) * parseFloat(element.quantity)
       } else {
-        totalPrice += parseInt(element.price);
+        totalPrice += parseFloat(element.price);
       }
     });
     return totalPrice;
