@@ -29,15 +29,12 @@ export class CameraPage {
     }
     localStorage.setItem("firstStart", "no");
 
-<<<<<<< HEAD
   }
 
   ngAfterViewInit() {
     //this.slides.freeMode = true;
-=======
     this.lastId = 7617400033557;
     this.item = this._itemRepository.getItemByEan(7617400033557);
->>>>>>> 3fe908f7f00f93e61ae0c60a95051f248b80a49d
   }
 
   ionViewDidLoad() {
@@ -201,17 +198,6 @@ export class CameraPage {
     );
   }
 
-<<<<<<< HEAD
-  getPriceWithDecimal(price) {
-    if (price) {
-      return price.toFixed(2);
-    } else {
-      return 0;
-    }
-  }
-
-=======
->>>>>>> 3fe908f7f00f93e61ae0c60a95051f248b80a49d
   resetCamera() {
     this.lastId = 0;
     this.item = this._itemRepository.getItemByEan(7640150491001);
