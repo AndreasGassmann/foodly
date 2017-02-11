@@ -46,7 +46,7 @@ export class ItemRepository {
   getItemByEan(ean) {
     let filtered = this.items.filter(i => i.ean == ean);
     if (filtered.length === 1) {
-      console.log('scanned', filtered[0])
+      console.log('scanned', filtered[0]);
       return filtered[0];
     } else {
       console.log('scanned', 'null');

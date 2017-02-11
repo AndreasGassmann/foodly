@@ -8,11 +8,11 @@
     <ion-slides *ngIf="lastId > 0 && item">
       <ion-slide *ngFor="let item of similars">
         <ion-card tappable (click)="openDetail()">
-          <img src="{{item.image}}"/>
+          <img src="{{ item.image }}"/>
             <div class="swiper-content">
-          <div class="card-title">{{ item.title }}</div>
-          <div class="card-subtitle">{{item.price}}</div>
-                </div>
+              <div class="card-title">{{ item.title }}</div>
+              <div class="card-subtitle">{{ getPriceWithDecimal(item.price) }}</div>
+            </div>
         </ion-card>
       </ion-slide>
     </ion-slides>

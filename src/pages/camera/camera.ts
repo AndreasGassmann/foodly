@@ -192,6 +192,14 @@ export class CameraPage {
     );
   }
 
+  getPriceWithDecimal(price) {
+    if (price) {
+      return price.toFixed(2);
+    } else {
+      return 0;
+    }
+  }
+  
   resetCamera() {
     this.lastId = 0;
     this.item = this._itemRepository.getItemByEan(7640150491001);
