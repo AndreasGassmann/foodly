@@ -1,7 +1,6 @@
 import {Component, NgZone} from '@angular/core';
 import {NavController, NavParams, Slides} from 'ionic-angular';
 import {OnboardingPage} from "../onboarding/onboarding";
-import {DetailPage} from "../detail/detail";
 import {CheckoutPage} from "../checkout/checkout";
 import { ViewChild } from '@angular/core';
 import {CartPage} from "../cart/cart";
@@ -71,6 +70,7 @@ export class CameraPage {
                   return
                 }
                 Quagga.start();
+                console.log('Scanner started');
               });
 
 
@@ -94,16 +94,27 @@ export class CameraPage {
             type: "LiveStream",
             target: document.querySelector('#live-view')    // Or '#yourElement' (optional)
           },
-          locator: {patchSize: "medium", halfSample: true},
-          debug: {
-            drawBoundingBox: true,
-            showFrequency: true,
-            drawScanline: true,
-            showPattern: true
+          locator: {
+            halfSample: false,
+            patchSize: "large", // x-small, small, medium, large, x-large
+            debug: {
+              showCanvas: true,
+              showPatches: true,
+              showFoundPatches: true,
+              showSkeleton: true,
+              showLabels: true,
+              showPatchLabels: true,
+              showRemainingPatchLabels: true,
+              boxFromPatches: {
+                showTransformed: true,
+                showTransformedBox: true,
+                showBB: true
+              }
+            }
           },
           numOfWorkers: 4,
           decoder: {"readers": [{"format": "ean_reader", "config": {}}]},
-          locate: true
+          locate: false
         }, function (err) {
           if (err) {
             console.log(err);

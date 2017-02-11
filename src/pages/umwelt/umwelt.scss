@@ -5,7 +5,11 @@ page-umwelt {
     height: 60vw;
     background-size: contain;
   }
-  .content {
+  .background {
     background: color($colors, sparfuchs);
+  }
+
+  #googleMap {
+    height: 200px;
   }
 }
