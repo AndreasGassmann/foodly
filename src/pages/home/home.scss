@@ -1,3 +1,10 @@
 page-home {
 
+  ion-card-header{
+    background: color($colors, primary);
+  }
+
+  h1, h2{
+    color: white!important;
+  }
 }
