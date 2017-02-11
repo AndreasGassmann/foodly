@@ -5,31 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-content id="live-view">
-    <ion-slides>
-      <ion-slide>
+    <ion-slides *ngIf="lastId > 0 && item">
+      <ion-slide *ngFor="let item of similars">
         <ion-card tappable (click)="openDetail()">
-          <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
+          <img src="{{item.image}}"/>
             <div class="swiper-content">
-          <div class="card-title">{{ lastId }}</div>
-          <div class="card-subtitle">CHF 1.50</div>
-                </div>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card tappable (click)="openDetail()">
-          <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
-            <div class="swiper-content">
-          <div class="card-title">Cevelat</div>
-          <div class="card-subtitle">CHF 1.50</div>
-                </div>
-        </ion-card>
-      </ion-slide>
-      <ion-slide>
-        <ion-card tappable (click)="openDetail()">
-          <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
-            <div class="swiper-content">
-          <div class="card-title">Cevelat</div>
-          <div class="card-subtitle">CHF 1.50</div>
+          <div class="card-title">{{ item.title }}</div>
+          <div class="card-subtitle">{{item.price}}</div>
                 </div>
         </ion-card>
       </ion-slide>
@@ -44,9 +26,8 @@
       </div>
           </div>
     <ion-card-content>
-      <p>
-          Cervelat<br>
-          <b>CHF 1.50</b>
+      <p>{{item.title}}<br>
+          <b>{{item.price}}</b>
       </p>
     </ion-card-content>
 

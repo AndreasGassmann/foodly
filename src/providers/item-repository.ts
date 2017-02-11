@@ -5,27 +5,52 @@ export class ItemRepository {
   items: any = [];
 
   constructor() {
-    this.items.push({
-      id: 7640150491001,
-      name: 'Wienerli',
-      image: 'http://static.wixstatic.com/media/8ef132_db0a53c0917c4d118061767f65a37452.png_srz_355_316_85_22_0.50_1.20_0.00_png_srz',
-      price: 1.4,
-      category: 0
-    }, {
-      id: 7610097111072,
-      name: 'Lasagne',
-      image: 'http://limon.ch/wp-content/uploads/2015/09/rivella.jpg',
-      price: 7.4,
-      category: 0
-    });
+
+    this.items.push(
+      {
+        "ean": 7617500014203,
+        title:"Barilla Olive",
+        image:"http://cdnimages.tlg-sino.com/985/8076809513715_l.jpg",
+        co2inmg:"1500",
+        sugarcubes: 52,
+        locationaddress:"Luzern, Schweiz",
+        price:"22 CHF",
+        actionPrice:"14 CHF",
+        pice: "1",
+        Weight:"200 Gramm",
+        ingreedients:"Wasser, Milchserum, Zucker, Kohlensäure, Säurungsmittel, karamellisierter Zucker, natürliche Aromen",
+        nutrition: [
+          {
+            title:"Energie / Brennwert",
+            value: "160 kJ / 38 kcal"
+          },
+          {
+            title:"Eiweiss / Proteine",
+            value: "3g"
+          },
+          {
+            title:"Fett",
+            value: "5g"
+          },
+          {
+            title:"Zucker",
+            value: "20g"
+          },
+        ],
+
+        similar:[7617500014203]
+      }
+    );
   }
 
   getItemByEan(ean) {
-    let filtered = this.items.filter(i => i.id === ean);
+    let filtered = this.items.filter(i => i.ean == ean);
     if (filtered.length === 1) {
+      console.log('scanned', filtered[0])
       return filtered[0];
     } else {
-      return {};
+      console.log('scanned', 'null');
+      return null;
     }
   }
 
