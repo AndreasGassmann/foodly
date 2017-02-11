@@ -1,0 +1,36 @@
+{
+  "ean": 12131415,
+  "title": "Migros Bio Ice Tea Glückstee",
+  "image": "https://www-leshop-ch-cld-res.cloudinary.com/image/upload/w_438,h_438,d_default_LS_nrd2c5.jpg,c_pad,g_center,dpr_2,fl_progressive,b_rgb:fff/f_auto/q_80/v20170211/prod/catalog/product/product-107762.jpg",
+  "co2inmg": "800",
+  "sugarcubes": 1,
+  "locationaddress": "Zürich, Schweiz",
+  "price": "1.70 CHF",
+  "actionPrice": "1.50 CHF",
+  "pice": "1",
+  "Weight": "1000 Gramm",
+  "ingreedients": "Aufguss aus Kräutern (Bohnenkraut, Hanf, Zitronenverbene, Petersilie, APfelminze, Rosenblüten) Extraktgehalt:1.2g/L, Zucker, Säuerungsmittel:Citronensäure",
+  "nutrition": [
+    {
+      "title": "Energie / Brennwert",
+      "value": "110kJ / 26kcal"
+    },
+    {
+      "title": "Eiweiss / Proteine",
+      "value": "0.5g"
+    },
+    {
+      "title": "Fett",
+      "value": "0.5	g"
+    },
+    {
+      "title": "Zucker",
+      "value": "7g"
+    }
+  ],
+  "similar": [
+    76168352,
+    54491014,
+    7617500014401
+  ]
+}

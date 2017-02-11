@@ -1,0 +1,35 @@
+{
+  "ean": 7613269186014,
+  "title": "Farmer Crunchy - Honig",
+  "image": "https://www-leshop-ch-cld-res.cloudinary.com/image/upload/w_400,h_400,d_default_LS_nrd2c5.jpg,c_pad,g_center,dpr_2,fl_progressive,b_rgb:fff/f_auto/q_80/v20170211/prod/catalog/product/product-51541.jpg",
+  "co2inmg": "500",
+  "sugarcubes": 20,
+  "locationaddress": "Zürich, Schweiz",
+  "price": "4.40 CHF",
+  "actionPrice": "3.30 CHF",
+  "pice": "12",
+  "Weight": "1500 Gramm",
+  "ingreedients": "Vollkornflocken 40% (HAFER, WEIZEN), Honig 18 %, Zucker, Palmfett, MagerMILCHpulver, HASELNÜSSE, Kokosraspel, Kochsalz, Aroma",
+  "nutrition": [
+    {
+      "title": "Energie / Brennwert",
+      "value": "4300kJ / 1100kcal"
+    },
+    {
+      "title": "Eiweiss / Proteine",
+      "value": "20g"
+    },
+    {
+      "title": "Fett",
+      "value": "40g"
+    },
+    {
+      "title": "Zucker",
+      "value": "70g"
+    }
+  ],
+  "similar": [
+    7617400036299,
+    7613269185772
+  ]
+}

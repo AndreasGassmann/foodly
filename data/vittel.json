@@ -1,0 +1,36 @@
+{
+  "ean": 3048431002696,
+  "title": "Vittel, Mineralwasser ohne Kohlensäure 50cl",
+  "image": " https://www-leshop-ch-cld-res.cloudinary.com/image/upload/w_400,h_400,d_default_LS_nrd2c5.jpg,c_pad,g_center,dpr_1,fl_progressive,b_rgb:fff/f_auto/q_80/v20170211/prod/catalog/product/product-8060.jpg",
+  "co2inmg": "1500",
+  "sugarcubes": 0,
+  "locationaddress": "Zürich, Schweiz",
+  "price": "0.65 CHF",
+  "actionPrice": "CHF",
+  "piece": "6",
+  "Weight": "500 Gramm",
+  "ingreedients": "Wasser",
+  "nutrition": [
+    {
+      "title": "Energie / Brennwert",
+      "value": "0 kJ / 0 kcal"
+    },
+    {
+      "title": "Eiweiss / Proteine",
+      "value": "0g"
+    },
+    {
+      "title": "Fett",
+      "value": "0g"
+    },
+    {
+      "title": "Zucker",
+      "value": "0g"
+    }
+  ],
+  "similar": [
+    1234,
+    4212321,
+    23123123
+  ]
+}
