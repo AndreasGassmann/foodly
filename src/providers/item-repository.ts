@@ -8,7 +8,7 @@ export class ItemRepository {
 
     this.items.push(
       {
-        "ean": 7617500014203,
+        "ean": 7613269186014,
         title:"Barilla Olive",
         image:"http://cdnimages.tlg-sino.com/985/8076809513715_l.jpg",
         co2inmg:"1500",
@@ -38,7 +38,7 @@ export class ItemRepository {
           },
         ],
 
-        similar:[7617500014203]
+        similar:[7613269186014,7613269186014,7613269186014,7613269186014]
       }
     );
   }

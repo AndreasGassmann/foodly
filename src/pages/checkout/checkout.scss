@@ -1,3 +1,22 @@
 page-checkout {
+  .card-header {
+    background: color($colors, sparfuchs);
+  }
+  .card-header p, .card-header h1 {
+    color: #fff;
+  }
+  .btn-checkout {
+    display: flex;
+    justify-content: center;
+  }
+  .img-visa {
+    width:32px;
+    height: 32px;
+    padding-right: 8px;
+  }
+  .creditcard {
+    display: flex;
+    align-items: center;
+  }
 
 }
