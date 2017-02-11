@@ -3,10 +3,10 @@
   "title": "Migros Ice Tea",
   "image": "https://www-leshop-ch-cld-res.cloudinary.com/image/upload/w_400,h_400,d_default_LS_nrd2c5.jpg,c_pad,g_center,dpr_2,fl_progressive,b_rgb:fff/f_auto/q_80/v20170211/prod/catalog/product/product-82915.jpg",
   "co2inmg": "150",
-  "sugarcubes": 52,
+  "sugarcubes": 30,
   "locationaddress": "Zürich, Schweiz",
-  "price": "2.35 CHF",
-  "actionPrice": "1.50 CHF",
+  "price": "1.19 CHF",
+  "actionPrice": "0.50 CHF",
   "pice": "1",
   "Weight": "33 Gramm",
   "ingreedients": "Aufguss aus Schwarztee und Hagebutten/ Karkadeblüten, Zucker, Fruchtzucker, Zitronensaft aus Konzentrat 2.7%, Traubenzucker",
@@ -29,6 +29,8 @@
     }
   ],
   "similar": [
-    12131415
+    12131415,
+    54491014,
+    7617500014401
   ]
 }

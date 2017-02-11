@@ -1,0 +1,35 @@
+{
+  "ean": 7617500014401,
+  "title": "Migros Aproz Classic",
+  "image": "https://www-leshop-ch-cld-res.cloudinary.com/image/upload/w_400,h_400,d_default_LS_nrd2c5.jpg,c_pad,g_center,dpr_2,fl_progressive,b_rgb:fff/f_auto/q_80/v20170211/prod/catalog/product/product-56835.jpg",
+  "co2inmg": "30",
+  "sugarcubes": 0,
+  "locationaddress": "Zürich, Schweiz",
+  "price": "1.50 CHF",
+  "actionPrice": "0.70 CHF",
+  "pice": "1",
+  "Weight": "500 Gramm",
+  "ingreedients": "Natürliches Mineralwasser Aproz, Kohlensäure",
+  "nutrition": [
+    {
+      "title": "Energie / Brennwert",
+      "value": "0 kJ / 0 kcal"
+    },
+    {
+      "title": "Eiweiss / Proteine",
+      "value": "0g"
+    },
+    {
+      "title": "Fett",
+      "value": "0g"
+    },
+    {
+      "title": "Zucker",
+      "value": "0g"
+    }
+  ],
+  "similar": [
+    12131415,
+    76168352
+  ]
+}
