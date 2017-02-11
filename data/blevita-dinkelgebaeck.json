@@ -1,0 +1,34 @@
+{
+  "ean": 7617400036299,
+  "title": "Blévita Dinkelgebäck",
+  "image": "https://www-leshop-ch-cld-res.cloudinary.com/image/upload/w_400,h_400,d_default_LS_nrd2c5.jpg,c_pad,g_center,dpr_2,fl_progressive,b_rgb:fff/f_auto/q_80/v20170211/prod/catalog/product/product-121310.jpg",
+  "co2inmg": "60",
+  "sugarcubes": 5,
+  "locationaddress": "Zürich, Schweiz",
+  "price": "3.55 CHF",
+  "actionPrice": "1.70 CHF",
+  "pice": "1",
+  "Weight": "228 Gramm",
+  "ingreedients": "DINKELmehl 57%, DINKELflocken 34%, Sonnenblumenöl, MagerMILCHpulver, Meersalz, GERSTENmalzextrakt, Hefe, WEIZENkeime 1%, Thymian, Backtriebmittel: E 500, Vitamine: Niacin, B2, B6, B1, Folsäure",
+  "nutrition": [
+    {
+      "title": "Energie / Brennwert",
+      "value": "1820 kJ / 434,6 kcal"
+    },
+    {
+      "title": "Eiweiss / Proteine",
+      "value": "13g"
+    },
+    {
+      "title": "Fett",
+      "value": "12g"
+    },
+    {
+      "title": "Zucker",
+      "value": "2,5g"
+    }
+  ],
+  "similar": [
+    7613269186014
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "ean": 54491014,
+  "title": "Coca Cola",
+  "image": "https://www-leshop-ch-cld-res.cloudinary.com/image/upload/w_400,h_400,d_default_LS_nrd2c5.jpg,c_pad,g_center,dpr_2,fl_progressive,b_rgb:fff/f_auto/q_80/v20170211/prod/catalog/product/product-17957.jpg",
+  "sugarcubes": 52,
+  "co2inmg": "2000",
+  "locationaddress": "Zürich, Schweiz",
+  "price": "1.50 CHF",
+  "actionPrice": "1.30 CHF",
+  "pice": "1",
+  "Weight": "1500 Gramm",
+  "ingreedients": "Wasser, Zucker, Kohlensaure, Farbstoff (Caramel), Sauerungsmittel (E 338), Koffein, Aroma",
+  "nutrition": [
+    {
+      "title": "Energie / Brennwert",
+      "value": "1800kJ / 420kcal"
+    },
+    {
+      "title": "Eiweiss / Proteine",
+      "value": "0.0g"
+    },
+    {
+      "title": "Fett",
+      "value": "0.0	g"
+    },
+    {
+      "title": "Zucker",
+      "value": "106g"
+    }
+  ],
+  "similar": [
+    76168352,
+    12131415,
+    7617500014401
+  ]
+}

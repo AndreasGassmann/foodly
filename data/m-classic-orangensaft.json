@@ -1,0 +1,36 @@
+{
+  "ean": 7613312052358,
+  "title": "M-Classic Orangensaft 25cl",
+  "image": " https://www-leshop-ch-cld-res.cloudinary.com/image/upload/w_400,h_400,d_default_LS_nrd2c5.jpg,c_pad,g_center,dpr_1,fl_progressive,b_rgb:fff/f_auto/q_80/v20170211/prod/catalog/product/product-228762.jpg",
+  "co2inmg": "1500",
+  "sugarcubes": 52,
+  "locationaddress": "Zürich, Schweiz",
+  "price": "0.40 CHF",
+  "actionPrice": "CHF",
+  "piece": "1",
+  "Weight": "250 Gramm",
+  "ingreedients": "Orangensaft aus Konzentrat",
+  "nutrition": [
+    {
+      "title": "Energie / Brennwert",
+      "value": "188 kJ / 44 kcal"
+    },
+    {
+      "title": "Eiweiss / Proteine",
+      "value": "0.5g"
+    },
+    {
+      "title": "Fett",
+      "value": "0.5g"
+    },
+    {
+      "title": "Zucker",
+      "value": "9g"
+    }
+  ],
+  "similar": [
+    1234,
+    4212321,
+    23123123
+  ]
+}
