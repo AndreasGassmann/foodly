@@ -18,9 +18,9 @@ export class CartPage {
   constructor(private cartService: CartService) {
     this.cartItems = this.cartService.getCartItems();
     this.cartService.addProduct({"id": 1, "quantity": 2});
-    this.cartService.increaseQuantity(1, 2);// id | amount
-    this.cartService.decraseQuanitity(1, 2);// id | amount
-    this.cartService.removeProduct(1);
+    this.cartService.increaseQuantity(1, 2);
+    this.cartService.decraseQuanitity(1, 2);
+    //this.cartService.removeProduct(1);
     //this.cartService.startCheckout();
     //this.cartService.showProductDetails()
   }

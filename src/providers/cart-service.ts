@@ -1,19 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-import {NavController} from "ionic-angular";
-import {DetailPage} from "../pages/detail/detail";
-import {CheckoutPage} from "../pages/checkout/checkout";
 
 @Injectable()
 export class CartService {
   private cartItems;
-
   /**
    * @param http
    * @param navCtrl
    */
-  constructor(public http: Http, public navCtrl: NavController) {
+  constructor(public http: Http) {
     this.cartItems = this.getCartItems();
   }
 
@@ -21,24 +17,29 @@ export class CartService {
    * @param productObject
    */
   public addProduct(productObject) {
-    this.cartItems.push(productObject);
+    let self = this;
+    if(this.cartItems.length > 0) {
+      this.cartItems.forEach(function (item) {
+        if(item.id == productObject.id) {
+          self.increaseQuantity(productObject.id, 1);
+        } else {
+          self.cartItems.push(productObject);
+        }
+
+      });
+    } else {
+      this.cartItems.push(productObject);
+    }
     this.updateCart();
   }
 
   /**
    * @param productId
    */
-  public showProductDetails(productId) {
-    this.navCtrl.push(DetailPage, productId);
-  }
-
-  /**
-   * @param productId
-   */
   public removeProduct(productId) {
-    this.cartItems.forEach(function (element, key) {
+    this.cartItems.forEach(function (element, index, cartItems) {
       if(element.id == productId) {
-        delete this.cartItems[key];
+       cartItems.splice(cartItems.indexOf(index), 1);
       }
     });
     this.updateCart();
@@ -49,9 +50,10 @@ export class CartService {
    * @param amount
    */
   public increaseQuantity(productId, amount) {
-    this.cartItems.forEach(function (element, key) {
+    let self = this;
+    this.cartItems.forEach(function (element, index, cartItems) {
       if(element.id == productId) {
-        this.cartItems[key].quantity = element.quantity + amount;
+        self.cartItems[index].quantity = parseInt(element.quantity) + parseInt(amount);
       }
     });
     this.updateCart();
@@ -62,24 +64,19 @@ export class CartService {
    * @param amount
    */
   public decraseQuanitity(productId, amount) {
-    this.cartItems.forEach(function (element, key) {
+    this.cartItems.forEach(function (element, index, cartItems) {
       if(element.id == productId) {
-        this.cartItems[key].quantity = element.quantity - amount;
+        cartItems[index].quantity = element.quantity - amount;
       }
     });
     this.updateCart();
-  }
-
-
-  public startCheckout() {
-    this.navCtrl.push(CheckoutPage, this.cartItems);
   }
 
   /**
    * @returns {boolean | object}
    */
   public getCartItems() {
-    return localStorage.getItem('actualCart') == null ? {} : JSON.parse(localStorage.getItem('actualCart'));
+    return localStorage.getItem('actualCart') == null ? [] : JSON.parse(localStorage.getItem('actualCart'));
   }
 
   private updateCart() {

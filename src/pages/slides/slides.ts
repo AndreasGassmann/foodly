@@ -3,13 +3,14 @@ import { NavController, NavParams } from 'ionic-angular';
 import {DetailPage} from "../detail/detail";
 import {TabsPage} from "../tabs/tabs";
 import {OnboardingPage} from "../onboarding/onboarding";
-
+import {CartService} from "../../providers/cart-service";
 @Component({
   selector: 'page-slides',
   templateUrl: 'slides.html'
 })
 export class SlidesPage {
-  slides = [
+
+  public slides = [
     {
       title: "Welcome to the Docs!",
       description: "The <b>Ionic Component Documentation</b> showcases a number of useful components that are included out of the box with Ionic.",
@@ -27,7 +28,9 @@ export class SlidesPage {
     }
   ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams, public cartService: CartService) {
+    this.cartService.decraseQuanitity(1,1);
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SlidesPage');
