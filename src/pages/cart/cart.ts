@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import {CartService} from "../../providers/cart-service";
 import {DetailPage} from "../detail/detail";
 import {CheckoutPage} from "../checkout/checkout";
+import {TabsPage} from "../tabs/tabs";
 
 /*
   Generated class for the Cart page.
@@ -26,7 +27,7 @@ export class CartPage {
   }
 
   openDetail(item) {
-    this.navCtrl.push(DetailPage, {
+    this.navCtrl.push(TabsPage, {
       item: item
     })
   }
