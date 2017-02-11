@@ -6,9 +6,6 @@ page-onboarding {
       text-align: left;
       font-size: 20px;
       color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
    ion-row {
       height: 25%;
@@ -28,6 +25,8 @@ page-onboarding {
   }
   .outside {
     height:16.6%;
+  }
+  .outside, .profiles-img, .profiles {
     display: flex;
     align-items: center;
     justify-content: center;
