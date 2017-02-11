@@ -18,13 +18,15 @@ export class CartService {
         if(parseInt(item.id) == parseInt(productObject.id)) {
           item.quantity = productObject.quantity + 1;
           found = true;
-        } else if (found == false) {
-          cartItems.push(productObject);
         }
       });
+      if (!found) {
+        cartItems.push(productObject);
+      }
     } else {
       cartItems.push(productObject);
     }
+
     this.updateCart(cartItems);
   }
 
@@ -77,6 +79,7 @@ export class CartService {
   }
 
   private updateCart(cartItems) {
+    console.log('updating cart', cartItems);
     localStorage.setItem('actualCart', JSON.stringify(cartItems));
   }
 
