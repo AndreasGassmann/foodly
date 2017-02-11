@@ -18,13 +18,15 @@ export class CartService {
         if(parseInt(item.id) == parseInt(productObject.id)) {
           item.quantity = productObject.quantity + 1;
           found = true;
-        } else if (found == false) {
-          cartItems.push(productObject);
         }
       });
+      if (!found) {
+        cartItems.push(productObject);
+      }
     } else {
       cartItems.push(productObject);
     }
+
     this.updateCart(cartItems);
   }
 
@@ -77,6 +79,7 @@ export class CartService {
   }
 
   private updateCart(cartItems) {
+    console.log('updating cart', cartItems);
     localStorage.setItem('actualCart', JSON.stringify(cartItems));
   }
 
@@ -88,6 +91,23 @@ export class CartService {
         return -1;
       }
       if (a.price > b.price) {
+        return 1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+
+    return similars;
+  }
+
+  getSimilarSortedByCO2(ean) {
+    let similars = this._itemRepository.getSimilars(ean);
+
+    similars.sort((a, b) => {
+      if (a.co2inmg < b.co2inmg) {
+        return -1;
+      }
+      if (a.co2inmg > b.co2inmg) {
         return 1;
       }
       // a must be equal to b

@@ -21,7 +21,7 @@
 <ion-footer>
   <ion-card *ngIf="lastId > 0 && item">
       <div class="card-last">
-      <div class="card-last__img">
+      <div class="card-last__img" (click)="openDetail()">
         <img src="{{ item.image }}">
       </div>
           </div>
@@ -55,17 +55,12 @@
   </ion-card>
   <ion-toolbar class="my-toolbar" color="black-lighten">
     <ion-row>
-      <ion-col width-33 center text-center>
-        <button ion-button color="dark" clear>
-          <ion-icon name='md-information-circle'></ion-icon>
-        </button>
-      </ion-col>
-      <ion-col width-33 center text-center>
-        <button ion-button color="dark" clear>
+      <ion-col width-50 center text-left>
+        <button ion-button color="dark" clear (click)="openOnboarding()">
           <ion-icon name='md-person'></ion-icon>
         </button>
       </ion-col>
-      <ion-col width-33 center text-center>
+      <ion-col width-50 center text-right>
         <button ion-button color="dark" clear (click)="openCart()">
           <ion-icon name='md-cart'></ion-icon>
         </button>

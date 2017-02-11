@@ -1,6 +1,7 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
 import {NavController, NavParams} from "ionic-angular";
 import {CartService} from "../../providers/cart-service";
+import {DomSanitizer} from "@angular/platform-browser";
 declare let google;
 
 @Component({
@@ -13,7 +14,7 @@ export class UmweltPage {
   map: any;
   item: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private _cartService: CartService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _cartService: CartService, public domSanitizer: DomSanitizer) {
     console.log(this.navParams.get('item'));
     this.item = this.navParams.get('item');
   }
