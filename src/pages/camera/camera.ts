@@ -37,10 +37,6 @@ export class CameraPage {
     this.slides.freeMode = true;
   }
 
-  goToSlide() {
-    this.slides.slideTo(2, 500);
-  }
-
   ionViewDidLoad() {
     let self = this;
 
