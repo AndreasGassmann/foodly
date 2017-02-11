@@ -19,6 +19,8 @@ export class CartPage {
 
   constructor(public navCtrl: NavController, public cartService: CartService) {
     this.cartItems = this.cartService.getCartItems();
+    this.cartService.addProduct({"id":1, "quantity":1});
+    this.cartService.addProduct({"id":2, "quantity":1});
   }
 
   ionViewDidLoad() {
