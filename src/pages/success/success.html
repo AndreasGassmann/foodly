@@ -1,18 +1,3 @@
-<!--
-  Generated template for the Success page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar color="primary">
-    <ion-title>success</ion-title>
-  </ion-navbar>
-
-</ion-header>
-
-
 <ion-content>
   <div class="sparfuchs"  *ngIf="cattype ==  0"  >
     <div class="div_coin">
@@ -73,7 +58,7 @@
   </div>
   <div *ngIf="cattype  > 2" class="footerumwelt">
     <ion-buttons end>
-      <button ion-button round>VIELEN DANK! WEITER EINKAUFEN?</button>
+      <button ion-button (click)="backToRoot()" round>VIELEN DANK! WEITER EINKAUFEN?</button>
     </ion-buttons>
   </div>
 </ion-footer>

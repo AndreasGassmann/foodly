@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {CameraPage} from "../camera/camera";
 declare var money_rain;
 /*
   Generated class for the Success page.
@@ -37,6 +38,11 @@ export class SuccessPage {
     console.log('ionVieqDidEnter');
     money_rain();
     console.log('ani');
+  }
+
+  backToRoot(){
+    localStorage.removeItem('actualCart');
+    this.navCtrl.setRoot(CameraPage);
   }
 
 }
