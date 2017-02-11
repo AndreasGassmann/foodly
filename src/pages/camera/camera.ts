@@ -23,7 +23,7 @@ export class CameraPage {
   public item = null;
   public similars = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository, private cartSerivce: CartService, public toastCtrl: ToastController, private platform: Platform) {
+  constructor(public toastController: ToastController, public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository, private cartSerivce: CartService, public toastCtrl: ToastController, private platform: Platform) {
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
       if(this.platform.is('android')){
@@ -38,7 +38,17 @@ export class CameraPage {
     //this.initCamera();
   }
 
-  initCamera(){
+  presentToast(text) {
+    let toast = this.toastCtrl.create({
+      message: text,
+      duration: 1000,
+      position: 'top'
+    });
+
+    toast.present();
+  }
+
+  initCamera() {
     let self = this;
 
     if (MediaStreamTrack.getSources) {
@@ -63,6 +73,7 @@ export class CameraPage {
               }, function (err) {
                 if (err) {
                   console.log(err);
+                  self.presentToast('Product not in database.');
                   return
                 }
                 Quagga.start();
@@ -74,7 +85,10 @@ export class CameraPage {
               self.zone.run(() => {
                 self.lastId = data.codeResult.code;
                 self.item = self._itemRepository.getItemByEan(data.codeResult.code);
-                if(self.item == null) return;
+                if(self.item == null) {
+                  self.presentToast('Konnte nicht gelesen werden. Bitte nochmals probieren');
+                  return;
+                }
                 self.similars = [];
 
                 for(var i = 0; i < self.item.similar.length; i++){
@@ -134,7 +148,10 @@ export class CameraPage {
         self.zone.run(() => {
           self.lastId = data.codeResult.code;
           self.item = self._itemRepository.getItemByEan(data.codeResult.code);
-          if(self.item == null) return;
+          if(self.item == null) {
+            self.presentToast('Konnte nicht gelesen werden. Bitte nochmals probieren');
+            return;
+          }
           self.similars = [];
 
           for(var i = 0; i < self.item.similar.length; i++){
