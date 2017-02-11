@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content class="has-header">
 <ion-row>
   <ion-col class="header-background c-products">
       <div class="c-products__item c-products__item--first c-products__item--is-selected">
@@ -20,7 +20,7 @@
       </div>
   </ion-col>
 </ion-row>
-  <ion-row class="content">
+  <ion-row class="background">
     <ion-card>
       <ion-card-header text-center>
         1500mg CO2<br>
@@ -31,14 +31,9 @@
       </ion-card-content>
     </ion-card>
   </ion-row>
-  <ion-row>
+  <ion-row class="background">
     <ion-card>
-      <ion-card-header text-center>
-        Header
-      </ion-card-header>
-      <ion-card-content>
-        The British use the term "header", but the American term "head-shot" the English simply refuse to adopt.
-      </ion-card-content>
+        <div #googleMap id="googleMap"></div>
     </ion-card>
   </ion-row>
 </ion-content>

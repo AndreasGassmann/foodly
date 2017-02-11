@@ -79,7 +79,7 @@ export class CartService {
    * @returns {boolean | object}
    */
   public getCartItems() {
-    return localStorage.getItem('actualCart') == null ? {} : JSON.parse(localStorage.getItem('actualCart'));
+    return localStorage.getItem('actualCart') == null ? [] : JSON.parse(localStorage.getItem('actualCart'));
   }
 
   private updateCart() {

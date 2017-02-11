@@ -36,7 +36,7 @@
     </ion-slides>
 </ion-content>
 
-<ion-footer *ngIf="lastId == 0">
+<ion-footer *ngIf="lastId > 0">
   <ion-card tappable (click)="openDetail()">
       <div class="card-last">
       <div class="card-last__img">
@@ -58,7 +58,7 @@
         </button>
       </ion-col>
       <ion-col>
-        <button (click)="lastId = 0" ion-button icon-left clear small>
+        <button (click)="resetCamera()" ion-button icon-left clear small>
           <ion-icon name="close"></ion-icon>
           <div>Abbrechen</div>
         </button>
