@@ -1,6 +1,7 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
 import {NavController, NavParams} from "ionic-angular";
 import {CameraPage} from "../camera/camera";
+import {CartService} from "../../providers/cart-service";
 declare let google;
 
 @Component({
@@ -11,9 +12,11 @@ export class UmweltPage {
 
   @ViewChild('googleMap') mapElement: ElementRef;
   map: any;
+  item: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, private _cartService: CartService) {
+    console.log(this.navParams.get('item'));
+    this.item = this.navParams.get('item');
   }
 
   ionViewDidLoad() {
@@ -119,4 +122,7 @@ export class UmweltPage {
     flightPath.setMap(this.map);
   }
 
+  addToCart() {
+    this._cartService.addProduct(this.item);
+  }
 }

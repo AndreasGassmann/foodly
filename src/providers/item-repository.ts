@@ -21,7 +21,12 @@ export class ItemRepository {
   }
 
   getItemByEan(ean) {
-    return this.items.filter(i => i.id === ean);
+    let filtered = this.items.filter(i => i.id === ean);
+    if (filtered.length === 1) {
+      return filtered[0];
+    } else {
+      return {};
+    }
   }
 
 }

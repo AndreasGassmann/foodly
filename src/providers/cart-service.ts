@@ -17,17 +17,20 @@ export class CartService {
    * @param productObject
    */
   public addProduct(productObject) {
+    // TODO: I don't think this works as intended (product gets pushed for every item in the cart
     let self = this;
     if(this.cartItems.length > 0) {
       this.cartItems.forEach(function (item) {
         if(item.id == productObject.id) {
           self.increaseQuantity(productObject.id, 1);
         } else {
+          productObject.quantity = 1;
           self.cartItems.push(productObject);
         }
 
       });
     } else {
+      productObject.quantity = 1;
       this.cartItems.push(productObject);
     }
     this.updateCart();
@@ -53,6 +56,9 @@ export class CartService {
     let self = this;
     this.cartItems.forEach(function (element, index) {
       if(element.id == productId) {
+        if (!element.quantity) {
+          self.cartItems[index].quantity = 0;
+        }
         self.cartItems[index].quantity = parseInt(element.quantity) + parseInt(amount);
       }
     });
@@ -80,6 +86,7 @@ export class CartService {
   }
 
   private updateCart() {
+    console.log('cart content', this.cartItems);
     localStorage.setItem('actualCart', JSON.stringify(this.cartItems));
   }
 }

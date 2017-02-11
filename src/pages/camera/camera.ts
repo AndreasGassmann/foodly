@@ -23,6 +23,9 @@ export class CameraPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository) {
 
+    // TODO: REMOVE, JUST AS A PLACEHOLDER FOR TESTING
+    this.item = this._itemRepository.getItemByEan(7640150491001);
+
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
     }
@@ -132,6 +135,7 @@ export class CameraPage {
 
   openDetail() {
     if (this.item) {
+      console.log('open detail', this.item);
       this.navCtrl.push(TabsPage, {
         item: this.item
       });
@@ -172,6 +176,6 @@ export class CameraPage {
 
   resetCamera() {
     this.lastId = 0;
-    this.item = {};
+    this.item = this._itemRepository.getItemByEan(7640150491001);
   }
 }
