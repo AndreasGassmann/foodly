@@ -44,9 +44,10 @@
           <div>Abbrechen</div>
         </button>
       </ion-col>
-      <ion-col width-33 center text-center>
-        <button ion-button color="dark" clear (click)="addProduct(item)">
-          <ion-icon name='md-cart'></ion-icon>
+      <ion-col>
+        <button ion-button clear (click)="addProduct(item)" ion-button icon-left clear small>
+          <ion-icon name='md-add'></ion-icon>
+          <div>Kaufen</div>
         </button>
       </ion-col>
     </ion-row>
