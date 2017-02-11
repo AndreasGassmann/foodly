@@ -1,3 +1,37 @@
 page-tabs {
+  .ion-ios-umwelt,
+  .ion-md-umwelt {
+    content: url('/assets/img/Umwelt_Icon.svg');
+    width: auto;
+    height: 24px;
+    opacity: 0.9;
+    color: white;
+  }
 
+  .ion-ios-lokal,
+  .ion-md-lokal {
+    content: url('/assets/img/Lokal_Icon.svg');
+    width: auto;
+    height: 24px;
+    opacity: 0.9;
+    color: white;
+  }
+
+  .ion-ios-sparfuchs,
+  .ion-md-sparfuchs {
+    content: url('/assets/img/Sparfuchs_Icon.svg');
+    width: auto;
+    height: 24px;
+    opacity: 0.9;
+    color: white;
+  }
+
+  .ion-ios-health,
+  .ion-md-health {
+    content: url('/assets/img/Health_Icon.svg');
+    width: auto;
+    height: 24px;
+    opacity: 0.9;
+    color: white;
+  }
 }
