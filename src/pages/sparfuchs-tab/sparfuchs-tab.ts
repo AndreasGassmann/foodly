@@ -14,12 +14,11 @@ import {CartService} from "../../providers/cart-service";
 })
 export class SparfuchsTabPage {
   item: any;
+  matches: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _cartService: CartService) {
     this.item = this.navParams.get('item');
-    console.log('sparfuchs ean', this.item.id);
-    console.log(this.item);
-    console.log(this._cartService.getSimilarSortedByMoney(this.item.id));
+    this.matches = this._cartService.getSimilarSortedByMoney(this.item.id);
   }
 
   ionViewDidLoad() {
@@ -34,6 +33,18 @@ export class SparfuchsTabPage {
   addToCart() {
     this._cartService.addProduct(this.item);
     this.back();
+  }
+
+  public getFirst() {
+    return this.matches[0];
+  }
+
+  public getSecond() {
+    return this.matches[1];
+  }
+
+  public getThird() {
+    return this.matches[2];
   }
 
 }

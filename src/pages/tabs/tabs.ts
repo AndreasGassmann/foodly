@@ -31,7 +31,7 @@ export class TabsPage {
     let index = 0;
 
     let type = parseInt(localStorage.getItem('clientType'));
-
+/*
     if (type === 0) {
       index = 1; // sparfuchs
     } else if (type === 1) {
@@ -41,6 +41,7 @@ export class TabsPage {
     } else {
       index = 2; // umwelt
     }
+    */
     this.tabRef.select(index);
   }
 }
