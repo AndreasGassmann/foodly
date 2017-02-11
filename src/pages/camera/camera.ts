@@ -198,6 +198,10 @@ export class CameraPage {
     );
   }
 
+  openOnboarding(){
+    this.navCtrl.push(OnboardingPage);
+  }
+
   resetCamera() {
     this.lastId = 0;
     this.item = this._itemRepository.getItemByEan(7640150491001);

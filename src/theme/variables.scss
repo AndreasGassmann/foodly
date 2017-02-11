@@ -30,7 +30,8 @@ $colors: (
                   umwelt:      #399E5A,
                   lokal:      #2274A5,
                   black-lighten: rgba(0,0,0,0.24),
-                 dark: #222
+                 dark: #222,
+                 accent: #EC407A
          );
 
 // App iOS Variables
@@ -72,4 +73,3 @@ $colors: (
 
 $font-family-base: "Montserrat", sans-serif !default;
 $font-family-md-base: "Montserrat", sans-serif !default;
-
