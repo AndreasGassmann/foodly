@@ -12,4 +12,8 @@ export class HomePage {
 
   constructor(public navCtrl: NavController) {}
 
+  back(){
+    this.navCtrl.parent.parent.pop();
+  }
+
 }

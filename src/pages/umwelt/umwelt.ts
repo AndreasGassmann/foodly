@@ -1,4 +1,6 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
+import {NavController, NavParams} from "ionic-angular";
+import {CameraPage} from "../camera/camera";
 declare let google;
 
 @Component({
@@ -10,12 +12,16 @@ export class UmweltPage {
   @ViewChild('googleMap') mapElement: ElementRef;
   map: any;
 
-  constructor() {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
 
   }
 
   ionViewDidLoad() {
     this.loadMap();
+  }
+
+  back(){
+    this.navCtrl.parent.parent.pop();
   }
 
   /**

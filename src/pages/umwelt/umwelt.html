@@ -1,5 +1,10 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
+    <ion-buttons left>
+      <button (click)="back()" ion-button navPop icon-only>
+        <ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+      </button>
+    </ion-buttons>
     <ion-title>
       Umwelt
     </ion-title>
@@ -8,16 +13,7 @@
 
 <ion-content class="has-header">
 <ion-row>
-  <ion-col class="header-background c-products">
-      <div class="c-products__item">
-          <img src="https://unsplash.it/202/?random">
-      </div>
-      <div class="c-products__item">
-          <img src="https://unsplash.it/201/?random">
-      </div>
-      <div class="c-products__item">
-          <img src="https://unsplash.it/200/?random">
-      </div>
+  <ion-col class="header-background">
   </ion-col>
 </ion-row>
   <ion-row class="background">
