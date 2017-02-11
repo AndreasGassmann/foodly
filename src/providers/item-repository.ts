@@ -49,7 +49,7 @@ export class ItemRepository {
       console.log('scanned', filtered[0]);
       return filtered[0];
     } else {
-      console.log('scanned', 'null');
+      console.log('product not in database');
       return null;
     }
   }
