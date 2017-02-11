@@ -6,51 +6,7 @@
 -->
 <ion-header>
     <ion-navbar>
-    <ion-title>Warenkorb</ion-title>
+    <ion-title>Checkout</ion-title>
     </ion-navbar>
 </ion-header>
 
-
-<ion-content>
-  <ion-list>
-    <ion-item-sliding *ngFor="let item of items">
-      <ion-item (click)="openDetail(item)">
-        <ion-avatar item-left>
-          <img src="{{ item.image }}">
-        </ion-avatar>
-        <h2>{{ item.count }} {{ item.name }}</h2>
-        <h3>{{ item.currency }} {{ item.price }}</h3>
-        <p>{{ item.category }}</p>
-      </ion-item>
-      <ion-item-options side="right">
-        <button ion-button (click)="removeItem(item)">remove</button>
-      </ion-item-options>
-    </ion-item-sliding>
-  </ion-list>
-</ion-content>
-
-<ion-footer class="c-footer c-footer--checkout">
-    <ion-grid>
-        <ion-row>
-            <ion-col class="c-footer__col" width-20>
-                <div class="c-button-checkout__items">Anzahl
-                    <span class="c-footer__count">{{ calculateTotalItems() }}</span>
-                </div>
-            </ion-col>
-            <ion-col width-60>
-                <button class="c-footer__button c-button-checkout" ion-button block round>
-                    <ion-icon class="c-button-checkout__icon" name="cart" text-end></ion-icon>
-                    <div class="c-button-checkout__icon-span">
-                        Kaufen
-                    </div>
-                </button>
-            </ion-col>
-            <ion-col class="c-footer__col" width-20>
-                <div class="c-footer__col">
-                    Total
-                    <span class="c-footer__count">&nbsp;{{ getCurrency() }} {{ calculateTotalPrice() }}</span>
-                </div>
-            </ion-col>
-        </ion-row>
-    </ion-grid>
-</ion-footer>

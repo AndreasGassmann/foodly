@@ -15,15 +15,10 @@ import {CartService} from "../../providers/cart-service";
 export class CartPage {
   public cartItems;
 
-  constructor(private cartService: CartService) {
+  constructor(public cartService: CartService) {
     this.cartItems = this.cartService.getCartItems();
-    this.cartService.addProduct({"id": 1, "quantity": 2});
-    this.cartService.increaseQuantity(1, 2);
-    this.cartService.decraseQuanitity(1, 2);
-    //this.cartService.removeProduct(1);
-    //this.cartService.startCheckout();
-    //this.cartService.showProductDetails()
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
