@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {CartService} from "../../providers/cart-service";
 import {DetailPage} from "../detail/detail";
+import {CheckoutPage} from "../checkout/checkout";
 
 /*
   Generated class for the Cart page.
@@ -18,7 +19,6 @@ export class CartPage {
 
   constructor(public navCtrl: NavController, public cartService: CartService) {
     this.cartItems = this.cartService.getCartItems();
-    this.cartService.removeProduct(1)
   }
 
   ionViewDidLoad() {
@@ -52,8 +52,19 @@ export class CartPage {
     return count;
   }
 
+  getPriceWithDecimal(price) {
+    if (price) {
+      return price.toFixed(2);
+    } else {
+      return 0;
+    }
+  }
+
   getCurrency() {
     return 'CHF';
   }
 
+  openCheckout() {
+    this.navCtrl.push(CheckoutPage);
+  }
 }

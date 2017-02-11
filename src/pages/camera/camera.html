@@ -37,10 +37,10 @@
 </ion-content>
 
 <ion-footer>
-  <ion-card *ngIf="lastId > 0" tappable (click)="openDetail()">
+  <ion-card *ngIf="lastId > 0 && item" tappable (click)="openDetail()">
       <div class="card-last">
       <div class="card-last__img">
-        <img src="{{ products[lastId] }}">
+        <img src="{{ item.image }}">
       </div>
           </div>
     <ion-card-content>
