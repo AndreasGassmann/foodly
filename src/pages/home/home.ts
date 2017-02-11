@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
-import { ApiService } from "../../providers/api-service";
+import {NavController, NavParams, Platform} from 'ionic-angular';
+
+declare let cordova: any;
 
 @Component({
   selector: 'page-home',
@@ -9,12 +10,6 @@ import { ApiService } from "../../providers/api-service";
 })
 export class HomePage {
 
-  constructor(public _apiService: ApiService, public navCtrl: NavController) {
-    this._apiService.getDataForIncredient()
-      .map(res => res.json())
-      .subscribe(data => {
-        console.log(data);
-    })
-  }
+  constructor(public navCtrl: NavController) {}
 
 }

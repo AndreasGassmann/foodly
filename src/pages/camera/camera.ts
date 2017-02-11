@@ -2,20 +2,15 @@ import {Component, NgZone} from '@angular/core';
 import {NavController, NavParams, Slides} from 'ionic-angular';
 import {OnboardingPage} from "../onboarding/onboarding";
 import {CheckoutPage} from "../checkout/checkout";
-import { ViewChild } from '@angular/core';
+import {ViewChild} from '@angular/core';
 import {CartPage} from "../cart/cart";
 import {TabsPage} from "../tabs/tabs";
+import {ItemRepository} from "../../providers/item-repository";
 
-declare var cordova;
-declare var Quagga;
-declare var MediaStreamTrack;
+declare let cordova;
+declare let Quagga;
+declare let MediaStreamTrack;
 
-/*
- Generated class for the Camera page.
-
- See http://ionicframework.com/docs/v2/components/#navigation for more info on
- Ionic pages and navigation.
- */
 @Component({
   selector: 'page-camera',
   templateUrl: 'camera.html'
@@ -24,12 +19,9 @@ export class CameraPage {
   @ViewChild(Slides) slides: Slides;
 
   private lastId = 0;
-  private products = {
-    '7640150491001': 'http://static.wixstatic.com/media/8ef132_db0a53c0917c4d118061767f65a37452.png_srz_355_316_85_22_0.50_1.20_0.00_png_srz',
-    '7610097111072': 'http://limon.ch/wp-content/uploads/2015/09/rivella.jpg'
-  };
+  private item = {};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository) {
 
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
@@ -47,7 +39,7 @@ export class CameraPage {
 
     if (MediaStreamTrack.getSources) {
       MediaStreamTrack.getSources(function (sources) {
-        for (var i = 0; i < sources.length; i++) {
+        for (let i = 0; i < sources.length; i++) {
           if (sources[i].facing == 'environment' && sources[i].kind == 'video') {
             Quagga.init(
               {
@@ -74,12 +66,12 @@ export class CameraPage {
               });
 
 
-            Quagga.onDetected(data => {
-              self.zone.run(() => {
-                self.lastId = data.codeResult.code;
+              Quagga.onDetected(data => {
+                self.zone.run(() => {
+                  self.lastId = data.codeResult.code;
+                  self.item = self._itemRepository.getItemByEan(data.codeResult.code);
+                });
               });
-            });
-
 
             return;
           }
@@ -124,11 +116,12 @@ export class CameraPage {
         });
 
 
-      Quagga.onDetected(data => {
-        self.zone.run(() => {
-          self.lastId = data.codeResult.code;
+        Quagga.onDetected(data => {
+          self.zone.run(() => {
+            self.lastId = data.codeResult.code;
+            self.item = self._itemRepository.getItemByEan(data.codeResult.code);
+          });
         });
-      });
 
     }
   }
@@ -138,7 +131,11 @@ export class CameraPage {
   }
 
   openDetail() {
-    this.navCtrl.setRoot(TabsPage);
+    if (this.item) {
+      this.navCtrl.push(TabsPage, {
+        item: this.item
+      });
+    }
   }
 
   openCheckout() {
@@ -173,4 +170,8 @@ export class CameraPage {
     );
   }
 
+  resetCamera() {
+    this.lastId = 0;
+    this.item = {};
+  }
 }

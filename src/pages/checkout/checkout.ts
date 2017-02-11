@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {DetailPage} from "../detail/detail";
+import {CartService} from "../../providers/cart-service";
 
 /*
  Generated class for the Checkout page.
@@ -15,24 +16,8 @@ import {DetailPage} from "../detail/detail";
 export class CheckoutPage {
     items: any = [];
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
-        this.items.push({
-            count: 1,
-            name: 'Finn',
-            image: 'https://unsplash.it/200/?random',
-            category: '',
-            currency: 'CHF',
-            price: 5
-        });
-
-        this.items.push({
-            count: 1,
-            name: 'Finn',
-            image: 'https://unsplash.it/201/?random',
-            category: '',
-            currency: 'CHF',
-            price: 3
-        });
+    constructor(public navCtrl: NavController, public navParams: NavParams, private _cartService: CartService) {
+        this.items = this._cartService.getCartItems();
     }
 
     ionViewDidLoad() {
@@ -46,7 +31,8 @@ export class CheckoutPage {
     }
 
     removeItem(item) {
-
+      this._cartService.removeProduct(item.id);
+      this.items = this._cartService.getCartItems();
     }
 
     calculateTotalPrice() {

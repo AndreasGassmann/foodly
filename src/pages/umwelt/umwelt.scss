@@ -5,8 +5,24 @@ page-umwelt {
     height: 60vw;
     background-size: contain;
   }
+
   .background {
     background: color($colors, sparfuchs);
+  }
+
+  .content {
+    .c-products {
+      display: flex;
+      flex-flow: row nowrap;
+
+      &__item {
+        flex: 1 1 33%;
+
+        > img {
+          display: block;
+        }
+      }
+    }
   }
 
   #googleMap {
