@@ -32,7 +32,7 @@ export class CameraPage {
   }
 
   ngAfterViewInit() {
-    this.slides.freeMode = true;
+    //this.slides.freeMode = true;
   }
 
   ionViewDidLoad() {
@@ -199,7 +199,7 @@ export class CameraPage {
       return 0;
     }
   }
-  
+
   resetCamera() {
     this.lastId = 0;
     this.item = this._itemRepository.getItemByEan(7640150491001);

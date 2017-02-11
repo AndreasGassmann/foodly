@@ -6,28 +6,74 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>success</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
-<ion-content padding>
-  <div class="div_coin">
-    <img class="coin" src="assets/img/coins.png" />
-
+<ion-content>
+  <div class="sparfuchs"  *ngIf="cattype ==  0"  >
+    <div class="div_coin">
+      <img class="coin" src="assets/img/coins.png" />
+    </div>
+    <h1>
+      <b>YEAH! </b>
+      <br />
+      Du hast CHF 51.50 gespart.
+    </h1>
   </div>
-
-  <h1>
-    <b>YEAH!</b>
-    <br />
-    Du hast CHF 51.50 gespart.
-  </h1>
-
+  <div *ngIf="cattype ==  1"  class="health">
+    <div class="div_coin">
+      <img class="coin" src="assets/img/health.png" />
+    </div>
+    <h1>
+      <b>YEAH!</b>
+      <br />
+      Du hast 30 Zuckerwürfel weniger konsumiert.
+    </h1>
+  </div>
+  <div *ngIf="cattype == 2"  class="lokal">
+    <div class="div_coin">
+      <img class="coin" src="assets/img/lokal.png" />
+    </div>
+    <h1>
+      <b>YEAH!</b>
+      <br />
+      Du hast deine lokalen Bauern unterstützt.
+    </h1>
+  </div>
+  <div *ngIf="cattype >  2" class="umwelt">
+    <div class="div_coin">
+      <img class="coin" src="assets/img/umwelt.png" />
+    </div>
+    <h1>
+      <b>YEAH!</b>
+      <br />
+      Du hast deine Umwelt mit 1500mg CO2 weniger belastet.
+    </h1>
+  </div>
 </ion-content>
-<ion-footer padding>
-  <ion-buttons end>
-    <button ion-button round>VIELEN DANK! WEITER EINKAUFEN?</button>
-  </ion-buttons>
+<ion-footer>
+  <div *ngIf="cattype ==  0" class="footersparfuchs">
+    <ion-buttons end>
+      <button ion-button round>VIELEN DANK! WEITER EINKAUFEN?</button>
+    </ion-buttons>
+  </div>
+  <div *ngIf="cattype ==  1" class="footerhealth">
+    <ion-buttons end>
+      <button ion-button round>VIELEN DANK! WEITER EINKAUFEN?</button>
+    </ion-buttons>
+  </div>
+  <div *ngIf="cattype ==  2" class="footerlokal">
+    <ion-buttons end>
+      <button ion-button round>VIELEN DANK! WEITER EINKAUFEN?</button>
+    </ion-buttons>
+  </div>
+  <div *ngIf="cattype  > 2" class="footerumwelt">
+    <ion-buttons end>
+      <button ion-button round>VIELEN DANK! WEITER EINKAUFEN?</button>
+    </ion-buttons>
+  </div>
 </ion-footer>
