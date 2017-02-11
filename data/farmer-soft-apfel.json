@@ -1,0 +1,36 @@
+{
+  "ean": 7613269185758,
+  "title": "Farmer Soft Apfel",
+  "image": "https://www-leshop-ch-cld-res.cloudinary.com/image/upload/w_400,h_400,d_default_LS_nrd2c5.jpg,c_pad,g_center,dpr_1,fl_progressive,b_rgb:fff/f_auto/q_80/v20170211/prod/catalog/product/product-51542.jpg",
+  "co2inmg": "1500",
+  "sugarcubes": 20,
+  "locationaddress": "Zürich, Schweiz",
+  "price": "4.40 CHF",
+  "actionPrice": "CHF",
+  "piece": "12",
+  "Weight": "240 Gramm",
+  "ingreedients": "Getreide, Zucker, Traubenzucker, Sojakerne, Sultaninen, getrocknete Äpfel, Glukosesirup, Palmfett, Fruchtzucker, Feuchthaltemittel (Sorbitsirup), Säurungsmittel (Citronensäure, Ascorbinsäure), Kochsalz, Aroma",
+  "nutrition": [
+    {
+      "title": "Energie / Brennwert",
+      "value": "1670 kJ / 398 kcal"
+    },
+    {
+      "title": "Eiweiss / Proteine",
+      "value": "7g"
+    },
+    {
+      "title": "Fett",
+      "value": "10g"
+    },
+    {
+      "title": "Zucker",
+      "value": "41g"
+    }
+  ],
+  "similar": [
+    1234,
+    4212321,
+    23123123
+  ]
+}

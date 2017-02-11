@@ -1,0 +1,36 @@
+{
+  "ean": 7617400033557,
+  "title": "Blévita 5-Korngebäck",
+  "image": " https://www-leshop-ch-cld-res.cloudinary.com/image/upload/w_400,h_400,d_default_LS_nrd2c5.jpg,c_pad,g_center,dpr_1,fl_progressive,b_rgb:fff/f_auto/q_80/v20170211/prod/catalog/product/product-54445.jpg",
+  "co2inmg": "1500",
+  "sugarcubes": 52,
+  "locationaddress": "Zürich, Schweiz",
+  "price": "0.55 CHF",
+  "actionPrice": "CHF",
+  "piece": "6",
+  "Weight": "38 Gramm",
+  "ingreedients": "Fünfkornmehl 90% (Weizen, Hafer, Roggen, Gerste, Dinkel), Sonnenblumenöl, Magermilchpulver, Kochsalz, Hefe, Gerstenmalzextrakt, Weizenkeime 1%, Backtriebmittel: E 500, E 503, natürliches Aroma, Vitamine: B1, B2, B6, Niacin, Folsäure",
+  "nutrition": [
+    {
+      "title": "Energie / Brennwert",
+      "value": "1731 kJ / 412 kcal"
+    },
+    {
+      "title": "Eiweiss / Proteine",
+      "value": "11g"
+    },
+    {
+      "title": "Fett",
+      "value": "12g"
+    },
+    {
+      "title": "Zucker",
+      "value": "2.5g"
+    }
+  ],
+  "similar": [
+    1234,
+    4212321,
+    23123123
+  ]
+}
