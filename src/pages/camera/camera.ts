@@ -1,5 +1,5 @@
 import {Component, NgZone} from '@angular/core';
-import {NavController, NavParams, Slides} from 'ionic-angular';
+import {NavController, NavParams, Slides, ToastController} from 'ionic-angular';
 import {OnboardingPage} from "../onboarding/onboarding";
 import {CheckoutPage} from "../checkout/checkout";
 import {ViewChild} from '@angular/core';
@@ -23,7 +23,7 @@ export class CameraPage {
   public item = null;
   public similars = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository, private cartSerivce: CartService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository, private cartSerivce: CartService, public toastCtrl: ToastController) {
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
     }
@@ -151,7 +151,15 @@ export class CameraPage {
 
   addProduct(item) {
     this.cartSerivce.addProduct(item);
-    alert("Produkt hinzugefügt");
+
+    this.lastId = 0;
+    this.item = null;
+
+    let toast = this.toastCtrl.create({
+      message: 'Produkt hinzugefügt',
+      duration: 3000
+    });
+    toast.present();
   }
 
   openCart() {
