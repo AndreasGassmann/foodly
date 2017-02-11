@@ -33,6 +33,10 @@ export class CameraPage {
 
   }
 
+  ngAfterViewInit() {
+    this.slides.freeMode = true;
+  }
+
   goToSlide() {
     this.slides.slideTo(2, 500);
   }
