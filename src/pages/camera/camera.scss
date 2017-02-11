@@ -74,8 +74,10 @@ page-camera {
     }
 
   .my-toolbar {
-    background-color: #000000;
-    opacity: 0.5;
+    ion-icon {
+      color: #fff;
+      font-size: 1.8em;
+    }
   }
 
 }
