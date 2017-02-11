@@ -11,7 +11,7 @@
           <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
             <div class="swiper-content">
           <div class="card-title">{{ lastId }}</div>
-          <div class="card-subtitle">1.50 SFr.-</div>
+          <div class="card-subtitle">CHF 1.50</div>
                 </div>
         </ion-card>
       </ion-slide>
@@ -20,7 +20,7 @@
           <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
             <div class="swiper-content">
           <div class="card-title">Cevelat</div>
-          <div class="card-subtitle">1.50 SFr</div>
+          <div class="card-subtitle">CHF 1.50</div>
                 </div>
         </ion-card>
       </ion-slide>
@@ -29,19 +29,25 @@
           <img src="http://ais.badische-zeitung.de/piece/01/54/a9/d5/22325717.jpg"/>
             <div class="swiper-content">
           <div class="card-title">Cevelat</div>
-          <div class="card-subtitle">1.50 SFr</div>
+          <div class="card-subtitle">CHF 1.50</div>
                 </div>
         </ion-card>
       </ion-slide>
     </ion-slides>
 </ion-content>
 
-<ion-footer *ngIf="lastId > 0">
+<ion-footer *ngIf="lastId == 0">
   <ion-card tappable (click)="openDetail()">
-    <img src="{{ products[lastId] }}" height="100px"/>
-
+      <div class="card-last">
+      <div class="card-last__img">
+        <img src="{{ products[lastId] }}">
+      </div>
+          </div>
     <ion-card-content>
-      <p>Cervelat </p>
+      <p>
+          Cervelat<br>
+          <b>CHF 1.50</b>
+      </p>
     </ion-card-content>
 
     <ion-row>
@@ -54,13 +60,8 @@
       <ion-col>
         <button (click)="lastId = 0" ion-button icon-left clear small>
           <ion-icon name="close"></ion-icon>
-          <div>Dismiss</div>
+          <div>Abbrechen</div>
         </button>
-      </ion-col>
-      <ion-col center text-center>
-        <ion-note>
-          1.5 SFr
-        </ion-note>
       </ion-col>
     </ion-row>
 

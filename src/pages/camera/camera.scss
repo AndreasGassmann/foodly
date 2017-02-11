@@ -62,18 +62,14 @@ page-camera {
         padding:    8px;
     }
 
-    //.card-title {
-    //    position:    absolute;
-    //    top:         36%;
-    //    font-size:   2.0em;
-    //    width:       100%;
-    //    font-weight: bold;
-    //}
-    //
-    //.card-subtitle {
-    //    font-size: 1.0em;
-    //    position:  absolute;
-    //    top:       52%;
-    //    width:     100%;
-    //}
+    .card-last {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+        &__img {
+            flex: 1 1 auto;
+        }
+    }
 }
