@@ -12,8 +12,20 @@ declare var money_rain;
   templateUrl: 'success.html'
 })
 export class SuccessPage {
-
+  type: number;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.type = parseInt(localStorage.getItem('clientType'));
+
+    if (this.type === 0) {
+      // sparfuchs
+    } else if (this.type === 1) {
+      // health
+    } else if (this.type === 2) {
+      // lokal
+    } else {
+      // umwelt
+    }
 
   }
 
