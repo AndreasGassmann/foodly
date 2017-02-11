@@ -1,8 +1,4 @@
 import {Component, ElementRef, ViewChild} from "@angular/core";
-import {LocationService} from "../../providers/location-service";
-import {RestService} from "../../providers/rest-service";
-import {Place} from "../../model/Place";
-import {SimpleCoordinate} from "../../model/SimpleCoordinate";
 
 declare let google;
 @Component({

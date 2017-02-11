@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController } from 'ionic-angular';
 import {CartService} from "../../providers/cart-service";
-import {DetailPage} from "../detail/detail";
 import {CheckoutPage} from "../checkout/checkout";
 import {TabsPage} from "../tabs/tabs";
 
@@ -51,14 +50,6 @@ export class CartPage {
   removeItem(item) {
     this.cartService.removeProduct(item.id);
     this.cartItems = this.cartService.getCartItems();
-  }
-
-  calculateTotalPrice() {
-    let price = 0;
-    this.cartItems.forEach(i => {
-      price += i.quantity * i.price;
-    });
-    return price.toFixed(2);
   }
 
   calculateTotalItems() {
