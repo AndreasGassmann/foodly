@@ -1,13 +1,8 @@
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {Component, ViewChild, ElementRef} from '@angular/core';
+import {NavController, NavParams} from 'ionic-angular';
 import {CartService} from "../../providers/cart-service";
 
-/*
-  Generated class for the LokalTab page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
+declare let google;
 @Component({
   selector: 'page-lokal-tab',
   templateUrl: 'lokal-tab.html'
@@ -19,8 +14,182 @@ export class LokalTabPage {
     this.item = this.navParams.get('item');
   }
 
+  /**
+   * Reference to the google map html container
+   */
+  @ViewChild('googleMap') mapElement: ElementRef;
+  map: any;
+
+  /**
+   * Loads the map with a custom stylesheet
+   */
+  private loadMap() {
+    let styles = [
+        {
+          "featureType": "administrative",
+          "elementType": "all",
+          "stylers": [
+            {
+              "saturation": "-100"
+            }
+          ]
+        },
+        {
+          "featureType": "administrative.province",
+          "elementType": "all",
+          "stylers": [
+            {
+              "visibility": "off"
+            }
+          ]
+        },
+        {
+          "featureType": "landscape",
+          "elementType": "all",
+          "stylers": [
+            {
+              "saturation": -100
+            },
+            {
+              "lightness": 65
+            },
+            {
+              "visibility": "on"
+            }
+          ]
+        },
+        {
+          "featureType": "poi",
+          "elementType": "all",
+          "stylers": [
+            {
+              "saturation": -100
+            },
+            {
+              "lightness": "50"
+            },
+            {
+              "visibility": "simplified"
+            }
+          ]
+        },
+        {
+          "featureType": "road",
+          "elementType": "all",
+          "stylers": [
+            {
+              "saturation": "-100"
+            }
+          ]
+        },
+        {
+          "featureType": "road.highway",
+          "elementType": "all",
+          "stylers": [
+            {
+              "visibility": "simplified"
+            }
+          ]
+        },
+        {
+          "featureType": "road.arterial",
+          "elementType": "all",
+          "stylers": [
+            {
+              "lightness": "30"
+            }
+          ]
+        },
+        {
+          "featureType": "road.local",
+          "elementType": "all",
+          "stylers": [
+            {
+              "lightness": "40"
+            }
+          ]
+        },
+        {
+          "featureType": "transit",
+          "elementType": "all",
+          "stylers": [
+            {
+              "saturation": -100
+            },
+            {
+              "visibility": "simplified"
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "elementType": "geometry",
+          "stylers": [
+            {
+              "hue": "#ffff00"
+            },
+            {
+              "lightness": -25
+            },
+            {
+              "saturation": -97
+            }
+          ]
+        },
+        {
+          "featureType": "water",
+          "elementType": "labels",
+          "stylers": [
+            {
+              "lightness": -25
+            },
+            {
+              "saturation": -100
+            }
+          ]
+        }
+      ]
+      ;
+
+
+    let latLng = new google.maps.LatLng(8.406991800000014, 46.8200266);
+
+    /**
+     * Default options (coordinates, zoom, stylesheet)
+     * @type {{center: google.maps.LatLng; zoom: number; mapTypeId: any; styles: ({featureType: string; elementType: string; stylers: {weight: string}[]}|{featureType: string; elementType: string; stylers: {color: string}[]}|{featureType: string; elementType: string; stylers: {visibility: string}[]}|{featureType: string; elementType: string; stylers: {color: string}[]}|{featureType: string; elementType: string; stylers: {color: string}[]}|{featureType: string; elementType: string; stylers: {color: string}[]}|{featureType: string; elementType: string; stylers: {visibility: string}[]}|{featureType: string; elementType: string; stylers: ({saturation: number}|{lightness: number})[]}|{featureType: string; elementType: string; stylers: {color: string}[]}|{featureType: string; elementType: string; stylers: {color: string}[]}|{featureType: string; elementType: string; stylers: {color: string}[]}|{featureType: string; elementType: string; stylers: {visibility: string}[]}|{featureType: string; elementType: string; stylers: {visibility: string}[]}|{featureType: string; elementType: string; stylers: {visibility: string}[]}|{featureType: string; elementType: string; stylers: ({color: string}|{visibility: string})[]}|{featureType: string; elementType: string; stylers: {color: string}[]}|{featureType: string; elementType: string; stylers: {color: string}[]}|{featureType: string; elementType: string; stylers: {color: string}[]})[]; streetViewControl: boolean; mapTypeControl: boolean}}
+     */
+    let mapOptions = {
+      center: latLng,
+      zoom: 1,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      styles: styles,
+      streetViewControl: false,
+      mapTypeControl: false
+    };
+    this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+    this.draw();
+  }
+
+  private draw() {
+    let flightPlanCoordinates = [
+      {lat: 51.399206, lng: -61.523437},
+      {lat: 24.527135, lng: -13.535156},
+      {lat: 47.040182, lng: 8.085938}
+    ];
+
+    let flightPath = new google.maps.Polyline({
+      path: flightPlanCoordinates,
+      geodesic: true,
+      strokeColor: '#2274A5',
+      strokeOpacity: 1.0,
+      strokeWeight: 2
+    });
+
+    flightPath.setMap(this.map);
+  }
+
   ionViewDidLoad() {
-    console.log('ionViewDidLoad LokalTabPage');
+    this.loadMap();
   }
 
   back() {

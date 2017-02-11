@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { Platform } from 'ionic-angular';
 import { StatusBar, Splashscreen } from 'ionic-native';
-import { SlidesPage } from "../pages/slides/slides";
-import {CameraPage} from "../pages/camera/camera";
+import { CameraPage } from "../pages/camera/camera";
 
 
 @Component({

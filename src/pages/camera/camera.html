@@ -11,7 +11,7 @@
           <img src="{{ item.image }}"/>
             <div class="swiper-content">
               <div class="card-title">{{ item.title }}</div>
-              <div class="card-subtitle">{{ getPriceWithDecimal(item.price) }}</div>
+              <div class="card-subtitle">{{ item.price }}</div>
             </div>
         </ion-card>
       </ion-slide>
@@ -19,7 +19,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-card *ngIf="lastId > 0 && item" tappable (click)="openDetail()">
+  <ion-card *ngIf="lastId > 0 && item">
       <div class="card-last">
       <div class="card-last__img">
         <img src="{{ item.image }}">
@@ -44,10 +44,15 @@
           <div>Abbrechen</div>
         </button>
       </ion-col>
+      <ion-col width-33 center text-center>
+        <button ion-button color="dark" clear (click)="addProduct(item)">
+          <ion-icon name='md-cart'></ion-icon>
+        </button>
+      </ion-col>
     </ion-row>
 
   </ion-card>
-  <ion-toolbar class="my-toolbar">
+  <ion-toolbar class="my-toolbar" color="black-lighten">
     <ion-row>
       <ion-col width-33 center text-center>
         <button ion-button color="dark" clear>
