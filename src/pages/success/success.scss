@@ -1,3 +1,31 @@
 page-success {
 
+
+  @keyframes myanim {
+  from { top: 0; }
+  to   { top: 768px; }
+  }
+
+  .drop {
+  position: fixed;
+  }
+
+  .layer2 {
+   width: 60px;
+  height: 60px;
+  background-image:url('https://vignette4.wikia.nocookie.net/mariokart/images/1/17/CoinMK8.png');
+  background-size:contain;
+  background-repeat:no-repeat;
+  animation: myanim 2s infinite linear;
+  }
+
+  .layer3 {
+  width: 60px;
+  height: 60px;
+    background-image:url('https://vignette4.wikia.nocookie.net/mariokart/images/1/17/CoinMK8.png');
+  background-size:contain;
+  background-repeat:no-repeat;
+  animation: myanim 3s infinite linear;
+  }
+
 }

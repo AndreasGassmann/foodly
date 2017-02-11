@@ -33,8 +33,8 @@ export class CameraPage {
 
   }
 
-  goToSlide() {
-    this.slides.slideTo(2, 500);
+  ngAfterViewInit() {
+    this.slides.freeMode = true;
   }
 
   ionViewDidLoad() {
