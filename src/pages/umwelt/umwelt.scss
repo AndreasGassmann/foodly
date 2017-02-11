@@ -1,3 +1,11 @@
 page-umwelt {
-
+  .header-background {
+    background-image: url(/assets/img/umwelt.png);
+    width: 100%;
+    height: 60vw;
+    background-size: contain;
+  }
+  .content {
+    background: color($colors, sparfuchs);
+  }
 }
