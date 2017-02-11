@@ -444,7 +444,7 @@ export class ItemRepository {
     this.items.push(vittel);
     this.items.forEach((el, i, orig) => {
       orig[i].id = orig[i].ean;
-      orig[i].priceString = orig[i];
+      orig[i].priceString = orig[i].price;
       orig[i].price = orig[i].price.split(' ')[0];
       orig[i].actionPriceString = orig[i].actionPrice;
       orig[i].actionPrice = orig[i].actionPrice.split(' ')[0];
