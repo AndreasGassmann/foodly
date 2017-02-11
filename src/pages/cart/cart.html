@@ -16,11 +16,11 @@
     <ion-item-sliding *ngFor="let item of cartItems">
       <ion-item (click)="openDetail(item)">
         <ion-avatar item-left>
-          <!--<img src="{{ item.image }}">-->
+          <img src="{{ item.image }}">
         </ion-avatar>
         <h2>quantity: {{ item.quantity }} id: {{ item.id }}</h2>
-        <!-- <h3>{{ item.currency }} {{ item.price }}</h3>-->
-       <!-- <p>{{ item.category }}</p> -->
+        <h3>{{ item.currency }} {{ item.price.toFixed(2) }}</h3>
+        <p>{{ item.category }}</p>
       </ion-item>
       <ion-item-options side="right">
         <button ion-button (click)="removeProduct(item.id)">remove</button>
@@ -48,7 +48,7 @@
       <ion-col class="c-footer__col" width-20>
         <div class="c-footer__col">
           Total
-          <!--<span class="c-footer__count">&nbsp;{{ getCurrency() }} {{ calculateTotalPrice() }}</span>-->
+          <span class="c-footer__count">&nbsp;{{ getCurrency() }} {{ calculateTotalPrice() }}</span>
         </div>
       </ion-col>
     </ion-row>

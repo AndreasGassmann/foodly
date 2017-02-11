@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {CartService} from "../../providers/cart-service";
+import {DetailPage} from "../detail/detail";
 
 /*
   Generated class for the Cart page.
@@ -15,13 +16,44 @@ import {CartService} from "../../providers/cart-service";
 export class CartPage {
   public cartItems;
 
-  constructor(public cartService: CartService) {
+  constructor(public navCtrl: NavController, public cartService: CartService) {
     this.cartItems = this.cartService.getCartItems();
   }
 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
+  }
+
+  openDetail(item) {
+    this.navCtrl.push(DetailPage, {
+      item: item
+    })
+  }
+
+  removeItem(item) {
+    this.cartService.removeProduct(item.id);
+    this.cartItems = this.cartService.getCartItems();
+  }
+
+  calculateTotalPrice() {
+    let price = 0;
+    this.cartItems.forEach(i => {
+      price += i.quantity * i.price;
+    });
+    return price.toFixed(2);
+  }
+
+  calculateTotalItems() {
+    let count = 0;
+    this.cartItems.forEach(i => {
+      count += i.quantity;
+    });
+    return count;
+  }
+
+  getCurrency() {
+    return 'CHF';
   }
 
 }
