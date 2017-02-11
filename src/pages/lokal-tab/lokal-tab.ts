@@ -1,19 +1,26 @@
 import { Component } from '@angular/core';
-
-import {NavController, NavParams, Platform} from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import {CartService} from "../../providers/cart-service";
 
-declare let cordova: any;
+/*
+  Generated class for the LokalTab page.
 
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+*/
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-lokal-tab',
+  templateUrl: 'lokal-tab.html'
 })
-export class HomePage {
+export class LokalTabPage {
   item: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _cartService: CartService) {
     this.item = this.navParams.get('item');
+  }
+
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad LokalTabPage');
   }
 
   back(){
@@ -22,6 +29,7 @@ export class HomePage {
 
   addToCart() {
     this._cartService.addProduct(this.item);
+    this.back();
   }
 
 }

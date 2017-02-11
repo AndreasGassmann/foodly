@@ -5,6 +5,9 @@ import { AboutPage } from '../pages/about/about';
 import { UmweltPage } from '../pages/umwelt/umwelt';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { HealthTabPage } from '../pages/health-tab/health-tab';
+import { LokalTabPage } from '../pages/lokal-tab/lokal-tab';
+import { SparfuchsTabPage } from '../pages/sparfuchs-tab/sparfuchs-tab';
 
 import {MapPage} from "../pages/map/map";
 import {ItemRepository} from '../providers/item-repository';
@@ -30,7 +33,10 @@ import {CartService} from "../providers/cart-service";
     DetailPage,
     CheckoutPage,
     SlidesPage,
-    CartPage
+    CartPage,
+    HealthTabPage,
+    LokalTabPage,
+    SparfuchsTabPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, { mode:'md', tabsPlacement: 'top' })
@@ -48,7 +54,10 @@ import {CartService} from "../providers/cart-service";
     DetailPage,
     CheckoutPage,
     SlidesPage,
-    CartPage
+    CartPage,
+    HealthTabPage,
+    LokalTabPage,
+    SparfuchsTabPage
   ],
   providers: [
     {

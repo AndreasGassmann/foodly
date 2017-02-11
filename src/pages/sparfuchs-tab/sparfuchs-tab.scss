@@ -1,0 +1,57 @@
+page-sparfuchs-tab {
+  .header-background {
+    background-image:    url('/assets/img/umwelt.png');
+    height:              70vw;
+    background-size:     contain;
+    background-repeat:   no-repeat;
+    background-position: bottom;
+  }
+
+  .c-products {
+    display:   flex;
+    flex-flow: row nowrap;
+
+    &__item {
+      flex:    1 1 33%;
+      padding: 16px;
+
+      > img {
+        display:       block;
+        border-radius: 4px;
+        border:        2px solid white;
+      }
+
+      &--first {
+        padding-left: 32px;
+
+        img {
+          margin-top: 56px;
+        }
+      }
+
+      &--last {
+        padding-right: 32px;
+
+        img {
+          margin-top: 72px;
+        }
+      }
+
+      &--is-selected {
+        img {
+          animation:                 bounce 1s infinite;
+          animation-timing-function: ease-in-out;
+        }
+      }
+    }
+  }
+
+  .content {
+    background: color($colors, sparfuchs);
+  }
+
+  #googleMap{
+    height: 200px;
+  }
+
+}
