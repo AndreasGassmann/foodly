@@ -18,8 +18,8 @@ export class CartPage {
 
   constructor(public navCtrl: NavController, public cartService: CartService) {
     this.cartItems = this.cartService.getCartItems();
+    this.cartService.removeProduct(1)
   }
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
