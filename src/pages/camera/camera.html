@@ -21,7 +21,7 @@
 <ion-footer>
   <ion-card *ngIf="lastId > 0 && item">
       <div class="card-last">
-      <div class="card-last__img">
+      <div class="card-last__img" (click)="openDetail()">
         <img src="{{ item.image }}">
       </div>
           </div>

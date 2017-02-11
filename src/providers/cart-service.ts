@@ -97,6 +97,23 @@ export class CartService {
     return similars;
   }
 
+  getSimilarSortedByCO2(ean) {
+    let similars = this._itemRepository.getSimilars(ean);
+
+    similars.sort((a, b) => {
+      if (a.co2inmg < b.co2inmg) {
+        return -1;
+      }
+      if (a.co2inmg > b.co2inmg) {
+        return 1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+
+    return similars;
+  }
+
 
 
 }
