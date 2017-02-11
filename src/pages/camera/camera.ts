@@ -26,7 +26,7 @@ export class CameraPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository, private cartSerivce: CartService, public toastCtrl: ToastController, private platform: Platform) {
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
-      if(this.platform.is('android')){
+      if (this.platform.is('android')) {
         this.openScanner();
       }
 
@@ -34,11 +34,11 @@ export class CameraPage {
     localStorage.setItem("firstStart", "no");
   }
 
-  ionViewDidEnter(){
+  ionViewDidEnter() {
     //this.initCamera();
   }
 
-  initCamera(){
+  initCamera() {
     let self = this;
 
     if (MediaStreamTrack.getSources) {
@@ -74,12 +74,12 @@ export class CameraPage {
               self.zone.run(() => {
                 self.lastId = data.codeResult.code;
                 self.item = self._itemRepository.getItemByEan(data.codeResult.code);
-                if(self.item == null) return;
+                if (self.item == null) return;
                 self.similars = [];
 
-                for(var i = 0; i < self.item.similar.length; i++){
+                for (var i = 0; i < self.item.similar.length; i++) {
                   var similar = self._itemRepository.getItemByEan(self.item.similar[i]);
-                  if(similar != null){
+                  if (similar != null) {
                     self.similars.push(similar);
                   }
                 }
@@ -134,12 +134,12 @@ export class CameraPage {
         self.zone.run(() => {
           self.lastId = data.codeResult.code;
           self.item = self._itemRepository.getItemByEan(data.codeResult.code);
-          if(self.item == null) return;
+          if (self.item == null) return;
           self.similars = [];
 
-          for(var i = 0; i < self.item.similar.length; i++){
+          for (var i = 0; i < self.item.similar.length; i++) {
             var similar = self._itemRepository.getItemByEan(self.item.similar[i]);
-            if(similar != null){
+            if (similar != null) {
               self.similars.push(similar);
             }
           }
@@ -181,6 +181,13 @@ export class CameraPage {
     }
   }
 
+  openDetailAlternative(item) {
+    this.navCtrl.push(TabsPage, {
+      item: item
+    });
+
+  }
+
   openCheckout() {
     this.navCtrl.push(CheckoutPage);
   }
@@ -212,7 +219,7 @@ export class CameraPage {
     );
   }
 
-  openOnboarding(){
+  openOnboarding() {
     this.navCtrl.push(OnboardingPage);
   }
 

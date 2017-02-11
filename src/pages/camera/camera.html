@@ -1,7 +1,7 @@
 <ion-content id="live-view">
     <ion-slides *ngIf="lastId > 0 && item">
       <ion-slide *ngFor="let item of similars">
-        <ion-card tappable (click)="openDetail()">
+        <ion-card tappable (click)="openDetailAlternative(item)">
           <img src="{{ item.image }}"/>
             <div class="swiper-content">
               <div class="card-title">{{ item.title }}</div>
