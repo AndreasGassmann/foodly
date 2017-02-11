@@ -7,4 +7,11 @@ page-home {
   h1, h2{
     color: white!important;
   }
+  .header-img {
+    display: flex;
+    justify-content: center;
+    img {
+      height: 250px;
+    }
+  }
 }

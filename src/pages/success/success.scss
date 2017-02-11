@@ -20,9 +20,68 @@ h1{
   justify-content: center;
   align-items: center;
 }
-  .content {
-    background: color($colors, sparfuchs);
+.sparfuchs {
+  background: color($colors, sparfuchs);
+  padding: 16px;
+  height:100%;
+}
+.lokal {
+  background: color($colors, lokal);
+  padding: 16px;
+  height:100%;
+}
+.health {
+  background: color($colors, gesudnheit);
+  padding: 16px;
+  height:100%;
+}
+.umwelt {
+  background: color($colors, umwelt);
+  padding: 16px;
+  height:100%;
+}
+
+
+.footerumwelt {
+  background: color($colors, umwelt);
+  padding: 16px;
+  width:100%;
+  .bar-buttons-md[end] {
+    text-align: center;
   }
+}
+.footerhealth {
+  background: color($colors, gesudnheit);
+  padding: 16px;
+  width:100%;
+  .bar-buttons-md[end] {
+    text-align: center;
+  }
+}
+.footerlokal {
+  background: color($colors, lokal);
+  padding: 16px;
+  width:100%;
+  .bar-buttons-md[end] {
+    text-align: center;
+  }
+}
+.footersparfuchs {
+  background: color($colors, sparfuchs);
+  padding: 16px;
+  width:100%;
+  .bar-buttons-md[end] {
+    text-align: center;
+  }
+}
+
+.footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  margin: 0 auto;
+}
 
   @keyframes myanim {
   from { top: 0; }

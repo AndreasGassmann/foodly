@@ -29,6 +29,10 @@ export class CameraPage {
     }
     localStorage.setItem("firstStart", "no");
 
+  }
+
+  ngAfterViewInit() {
+    //this.slides.freeMode = true;
     this.lastId = 7617400033557;
     this.item = this._itemRepository.getItemByEan(7617400033557);
   }

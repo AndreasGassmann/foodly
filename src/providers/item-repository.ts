@@ -14,7 +14,7 @@ export class ItemRepository {
       "sugarcubes": 52,
       "locationaddress": "Zürich, Schweiz",
       "price": "0.55 CHF",
-      "actionPrice": "CHF",
+      "actionPrice": "0.35 CHF",
       "piece": "6",
       "Weight": "38 Gramm",
       "ingreedients": "Fünfkornmehl 90% (Weizen, Hafer, Roggen, Gerste, Dinkel), Sonnenblumenöl, Magermilchpulver, Kochsalz, Hefe, Gerstenmalzextrakt, Weizenkeime 1%, Backtriebmittel: E 500, E 503, natürliches Aroma, Vitamine: B1, B2, B6, Niacin, Folsäure",
@@ -167,7 +167,7 @@ export class ItemRepository {
       "sugarcubes": 20,
       "locationaddress": "Zürich, Schweiz",
       "price": "4.40 CHF",
-      "actionPrice": "CHF",
+      "actionPrice": "3.90 CHF",
       "piece": "12",
       "Weight": "240 Gramm",
       "ingreedients": "Getreide, Zucker, Traubenzucker, Sojakerne, Sultaninen, getrocknete Äpfel, Glukosesirup, Palmfett, Fruchtzucker, Feuchthaltemittel (Sorbitsirup), Säurungsmittel (Citronensäure, Ascorbinsäure), Kochsalz, Aroma",
@@ -243,7 +243,7 @@ export class ItemRepository {
       "sugarcubes": 52,
       "locationaddress": "Zürich, Schweiz",
       "price": "0.40 CHF",
-      "actionPrice": "CHF",
+      "actionPrice": "0.35 CHF",
       "piece": "1",
       "Weight": "250 Gramm",
       "ingreedients": "Orangensaft aus Konzentrat",
@@ -400,7 +400,7 @@ export class ItemRepository {
       "sugarcubes": 0,
       "locationaddress": "Zürich, Schweiz",
       "price": "0.65 CHF",
-      "actionPrice": "CHF",
+      "actionPrice": "0.40 CHF",
       "piece": "6",
       "Weight": "500 Gramm",
       "ingreedients": "Wasser",
@@ -442,9 +442,17 @@ export class ItemRepository {
     this.items.push(migrosbioicetea);
     this.items.push(migrosicetea);
     this.items.push(vittel);
+    this.items.forEach((el, i, orig) => {
+      orig[i].id = orig[i].ean;
+      orig[i].priceString = orig[i].price;
+      orig[i].price = orig[i].price.split(' ')[0];
+      orig[i].actionPriceString = orig[i].actionPrice;
+      orig[i].actionPrice = orig[i].actionPrice.split(' ')[0];
+    });
   }
 
   getItemByEan(ean) {
+    console.log('getting item by ean', ean);
     let filtered = this.items.filter(i => i.ean == ean);
     if (filtered.length === 1) {
       console.log('scanned', filtered[0]);
@@ -455,4 +463,29 @@ export class ItemRepository {
     }
   }
 
+  getSimilar(ean) {
+    console.log('getSimilar', ean);
+    let filtered = this.items.filter(i => i.ean == ean);
+    console.log('getSimilarFiltered', filtered);
+
+    if (filtered.length === 1) {
+      console.log('returning similars', filtered[0].similar);
+      return filtered[0].similar;
+    } else {
+      return [];
+    }
+  }
+
+  getSimilars(ean) {
+    console.log('getSimilars ean:', ean);
+    let similarProducts = [];
+    let similars = this.getSimilar(ean);
+    console.log('getSimilars', similars);
+    if (similars) {
+      similars.forEach(i => {
+        similarProducts.push(this.getItemByEan(i));
+      });
+    }
+    return similarProducts;
+  }
 }

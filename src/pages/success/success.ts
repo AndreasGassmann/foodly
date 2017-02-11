@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import {CameraPage} from "../camera/camera";
 declare var money_rain;
 /*
   Generated class for the Success page.
@@ -12,16 +13,17 @@ declare var money_rain;
   templateUrl: 'success.html'
 })
 export class SuccessPage {
-  type: number;
+  public cattype = 3;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
-    this.type = parseInt(localStorage.getItem('clientType'));
+    //this.type = parseInt(localStorage.getItem('clientType'));
 
-    if (this.type === 0) {
+    //console.log(localStorage.getItem('clientType'));
+    if (this.cattype === 0) {
       // sparfuchs
-    } else if (this.type === 1) {
+    } else if (this.cattype === 1) {
       // health
-    } else if (this.type === 2) {
+    } else if (this.cattype === 2) {
       // lokal
     } else {
       // umwelt
@@ -30,14 +32,17 @@ export class SuccessPage {
   }
 
   ionViewDidLoad() {
-
     console.log('ionViewDidLoad SuccessPage');
-
   }
   ionViewDidEnter() {
     console.log('ionVieqDidEnter');
     money_rain();
     console.log('ani');
+  }
+
+  backToRoot(){
+    localStorage.removeItem('actualCart');
+    this.navCtrl.setRoot(CameraPage);
   }
 
 }

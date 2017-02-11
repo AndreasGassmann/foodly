@@ -17,10 +17,14 @@ export class SparfuchsTabPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _cartService: CartService) {
     this.item = this.navParams.get('item');
+    console.log('sparfuchs ean', this.item.id);
+    console.log(this.item);
+    console.log(this._cartService.getSimilarSortedByMoney(this.item.id));
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad SparfuchsTabPage');
+    console.log(this.item);
   }
 
   back() {
