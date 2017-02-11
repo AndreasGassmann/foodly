@@ -23,16 +23,10 @@ export class CameraPage {
   public similars = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository) {
-
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
     }
     localStorage.setItem("firstStart", "no");
-
-  }
-
-  ngAfterViewInit() {
-    this.slides.freeMode = true;
   }
 
   ionViewDidLoad() {
@@ -192,14 +186,14 @@ export class CameraPage {
     );
   }
 
-  getPriceWithDecimal(price) {
+  /*  getPriceWithDecimal(price) {
     if (price) {
       return price.toFixed(2);
     } else {
       return 0;
     }
-  }
-  
+  }*/
+
   resetCamera() {
     this.lastId = 0;
     this.item = this._itemRepository.getItemByEan(7640150491001);
