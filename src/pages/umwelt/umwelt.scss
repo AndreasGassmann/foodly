@@ -1,4 +1,11 @@
 page-umwelt {
+  .card-header-md {
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+  .card-header-md small {
+    font-size: 1.4re!important;
+  }
     .header-background {
         background-image:    url('/assets/img/umwelt.png');
         height:              70vw;
