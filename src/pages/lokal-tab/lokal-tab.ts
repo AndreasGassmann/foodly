@@ -166,6 +166,7 @@ export class LokalTabPage {
       streetViewControl: false,
       mapTypeControl: false
     };
+    this.map.setCenter({lat:46.947974, lng:7.447447});
     this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
     this.draw();
   }
