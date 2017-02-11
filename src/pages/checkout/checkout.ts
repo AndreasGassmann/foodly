@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {DetailPage} from "../detail/detail";
 import {CartService} from "../../providers/cart-service";
 import {SuccessPage} from "../success/success";
 

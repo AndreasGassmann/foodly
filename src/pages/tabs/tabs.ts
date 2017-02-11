@@ -1,9 +1,7 @@
 import {Component, ViewChild} from '@angular/core';
 
 import { HomePage } from '../home/home';
-import { AboutPage } from '../about/about';
 import { UmweltPage } from '../umwelt/umwelt';
-import { MapPage } from '../map/map';
 import {NavParams, Tabs} from "ionic-angular";
 import {HealthTabPage} from "../health-tab/health-tab";
 import {LokalTabPage} from "../lokal-tab/lokal-tab";

@@ -1,6 +1,5 @@
 import {Component, ViewChild, ElementRef} from '@angular/core';
 import {NavController, NavParams} from "ionic-angular";
-import {CameraPage} from "../camera/camera";
 import {CartService} from "../../providers/cart-service";
 declare let google;
 

@@ -6,6 +6,7 @@ import {ViewChild} from '@angular/core';
 import {CartPage} from "../cart/cart";
 import {TabsPage} from "../tabs/tabs";
 import {ItemRepository} from "../../providers/item-repository";
+import {CartService} from "../../providers/cart-service";
 
 declare let cordova;
 declare let Quagga;
@@ -22,11 +23,14 @@ export class CameraPage {
   public item = null;
   public similars = [];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository, private cartSerivce: CartService) {
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
     }
     localStorage.setItem("firstStart", "no");
+
+    this.lastId = 7613269186014;
+    this.item = this._itemRepository.getItemByEan(7613269186014);
   }
 
   ionViewDidLoad() {
@@ -141,6 +145,11 @@ export class CameraPage {
     }
   }
 
+  addProduct(item) {
+    this.cartSerivce.addProduct(item);
+    alert("Produkt hinzugefügt");
+  }
+
   openCart() {
     this.navCtrl.push(CartPage);
   }
@@ -160,7 +169,6 @@ export class CameraPage {
 
 
   openScanner() {
-
     cordova.plugins.barcodeScanner.scan(
       function (result) {
         alert("We got a barcode\n" +
@@ -185,14 +193,6 @@ export class CameraPage {
       }
     );
   }
-
-  /*  getPriceWithDecimal(price) {
-    if (price) {
-      return price.toFixed(2);
-    } else {
-      return 0;
-    }
-  }*/
 
   resetCamera() {
     this.lastId = 0;

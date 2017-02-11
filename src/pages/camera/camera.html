@@ -19,7 +19,7 @@
 </ion-content>
 
 <ion-footer>
-  <ion-card *ngIf="lastId > 0 && item" tappable (click)="openDetail()">
+  <ion-card *ngIf="lastId > 0 && item">
       <div class="card-last">
       <div class="card-last__img">
         <img src="{{ item.image }}">
@@ -42,6 +42,11 @@
         <button (click)="resetCamera()" ion-button icon-left clear small>
           <ion-icon name="close"></ion-icon>
           <div>Abbrechen</div>
+        </button>
+      </ion-col>
+      <ion-col width-33 center text-center>
+        <button ion-button color="dark" clear (click)="addProduct(item)">
+          <ion-icon name='md-cart'></ion-icon>
         </button>
       </ion-col>
     </ion-row>
