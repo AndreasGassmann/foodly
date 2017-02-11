@@ -117,6 +117,39 @@ export class CartService {
     return similars;
   }
 
+  getSimilarSortedBySugar(ean) {
+    let similars = this._itemRepository.getSimilars(ean);
+
+    similars.sort((a, b) => {
+      if (a.nutritions[3].valueIng < b.nutritions[3].valueIng) {
+        return -1;
+      }
+      if (a.nutritions[3].valueIng > b.nutritions[3].valueIng) {
+        return 1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+
+    return similars;
+  }
+
+  getSimilarSortedByDistance(ean) {
+    let similars = this._itemRepository.getSimilars(ean);
+
+    similars.sort((a, b) => {
+      if (a.distanceInKm < b.distanceInKm) {
+        return -1;
+      }
+      if (a.distanceInKm > b.distanceInKm) {
+        return 1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+
+    return similars;
+  }
 
 
 }

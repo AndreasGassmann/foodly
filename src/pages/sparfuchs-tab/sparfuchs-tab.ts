@@ -18,6 +18,7 @@ export class SparfuchsTabPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _cartService: CartService) {
     this.item = this.navParams.get('item');
+    this.matches = this._cartService.getSimilarSortedByMoney(this.item.id);
   }
 
   ionViewDidLoad() {

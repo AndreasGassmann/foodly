@@ -13,6 +13,7 @@ export class ItemRepository {
       "co2inmg": "1500",
       "sugarcubes": 52,
       "locationaddress": "Zürich, Schweiz",
+      "distanceInKm": 10,
       "price": "0.55 CHF",
       "actionPrice": "0.35 CHF",
       "piece": "6",
@@ -33,7 +34,8 @@ export class ItemRepository {
         },
         {
           "title": "Zucker",
-          "value": "2.5g"
+          "value": "2.5g",
+          "valueIng": 2.5
         }
       ],
       "similar": [
@@ -51,9 +53,10 @@ export class ItemRepository {
       "co2inmg": "60",
       "sugarcubes": 5,
       "locationaddress": "Zürich, Schweiz",
+      "distanceInKm": 80,
       "price": "3.55 CHF",
       "actionPrice": "1.70 CHF",
-      "pice": "1",
+      "piece": "1",
       "Weight": "228 Gramm",
       "ingreedients": "DINKELmehl 57%, DINKELflocken 34%, Sonnenblumenöl, MagerMILCHpulver, Meersalz, GERSTENmalzextrakt, Hefe, WEIZENkeime 1%, Thymian, Backtriebmittel: E 500, Vitamine: Niacin, B2, B6, B1, Folsäure",
       "nutrition": [
@@ -71,7 +74,8 @@ export class ItemRepository {
         },
         {
           "title": "Zucker",
-          "value": "2,5g"
+          "value": "2,5g",
+          "valueIng": 2.5
         }
       ],
       "similar": [
@@ -89,9 +93,10 @@ export class ItemRepository {
       "sugarcubes": 52,
       "co2inmg": "2000",
       "locationaddress": "Zürich, Schweiz",
+      "distanceInKm": 310,
       "price": "1.50 CHF",
       "actionPrice": "1.30 CHF",
-      "pice": "1",
+      "piece": "1",
       "Weight": "1500 Gramm",
       "ingreedients": "Wasser, Zucker, Kohlensaure, Farbstoff (Caramel), Sauerungsmittel (E 338), Koffein, Aroma",
       "nutrition": [
@@ -109,7 +114,8 @@ export class ItemRepository {
         },
         {
           "title": "Zucker",
-          "value": "106g"
+          "value": "106g",
+          "valueIng": 106
         }
       ],
       "similar": [
@@ -128,9 +134,10 @@ export class ItemRepository {
       "co2inmg": "500",
       "sugarcubes": 20,
       "locationaddress": "Zürich, Schweiz",
+      "distanceInKm": 1412,
       "price": "4.40 CHF",
       "actionPrice": "3.30 CHF",
-      "pice": "12",
+      "piece": "12",
       "Weight": "1500 Gramm",
       "ingreedients": "Vollkornflocken 40% (HAFER, WEIZEN), Honig 18 %, Zucker, Palmfett, MagerMILCHpulver, HASELNÜSSE, Kokosraspel, Kochsalz, Aroma",
       "nutrition": [
@@ -148,7 +155,8 @@ export class ItemRepository {
         },
         {
           "title": "Zucker",
-          "value": "70g"
+          "value": "70g",
+          "valueIng": 70
         }
       ],
       "similar": [
@@ -166,6 +174,7 @@ export class ItemRepository {
       "co2inmg": "1500",
       "sugarcubes": 20,
       "locationaddress": "Zürich, Schweiz",
+      "distanceInKm": 95,
       "price": "4.40 CHF",
       "actionPrice": "3.90 CHF",
       "piece": "12",
@@ -186,7 +195,8 @@ export class ItemRepository {
         },
         {
           "title": "Zucker",
-          "value": "41g"
+          "value": "41g",
+          "valueIng": 41
         }
       ],
       "similar": [
@@ -204,9 +214,10 @@ export class ItemRepository {
       "co2inmg": "60",
       "sugarcubes": 5,
       "locationaddress": "Zürich, Schweiz",
+      "distanceInKm": 24120,
       "price": "3.55 CHF",
       "actionPrice": "1.70 CHF",
-      "pice": "1",
+      "piece": "1",
       "Weight": "228 Gramm",
       "ingreedients": "DINKELmehl 57%, DINKELflocken 34%, Sonnenblumenöl, MagerMILCHpulver, Meersalz, GERSTENmalzextrakt, Hefe, WEIZENkeime 1%, Thymian, Backtriebmittel: E 500, Vitamine: Niacin, B2, B6, B1, Folsäure",
       "nutrition": [
@@ -224,7 +235,8 @@ export class ItemRepository {
         },
         {
           "title": "Zucker",
-          "value": "2,5g"
+          "value": "2,5g",
+          "valueIng": 2.5
         }
       ],
       "similar": [
@@ -242,6 +254,7 @@ export class ItemRepository {
       "co2inmg": "1500",
       "sugarcubes": 52,
       "locationaddress": "Zürich, Schweiz",
+      "distanceInKm": 740,
       "price": "0.40 CHF",
       "actionPrice": "0.35 CHF",
       "piece": "1",
@@ -262,7 +275,8 @@ export class ItemRepository {
         },
         {
           "title": "Zucker",
-          "value": "9g"
+          "value": "9g",
+          "valueIng": 9
         }
       ],
       "similar": [
@@ -281,9 +295,10 @@ export class ItemRepository {
       "co2inmg": "30",
       "sugarcubes": 0,
       "locationaddress": "Zürich, Schweiz",
+      "distanceInKm": 814,
       "price": "1.50 CHF",
       "actionPrice": "0.70 CHF",
-      "pice": "1",
+      "piece": "1",
       "Weight": "500 Gramm",
       "ingreedients": "Natürliches Mineralwasser Aproz, Kohlensäure",
       "nutrition": [
@@ -301,7 +316,8 @@ export class ItemRepository {
         },
         {
           "title": "Zucker",
-          "value": "0g"
+          "value": "0g",
+          "valueIng": 0
         }
       ],
       "similar": [
@@ -320,9 +336,10 @@ export class ItemRepository {
         "co2inmg": "800",
         "sugarcubes": 1,
         "locationaddress": "Zürich, Schweiz",
-        "price": "1.70 CHF",
+      "distanceInKm": 55,
+      "price": "1.70 CHF",
         "actionPrice": "1.50 CHF",
-        "pice": "1",
+        "piece": "1",
         "Weight": "1000 Gramm",
         "ingreedients": "Aufguss aus Kräutern (Bohnenkraut, Hanf, Zitronenverbene, Petersilie, APfelminze, Rosenblüten) Extraktgehalt:1.2g/L, Zucker, Säuerungsmittel:Citronensäure",
         "nutrition": [
@@ -340,7 +357,8 @@ export class ItemRepository {
           },
           {
             "title": "Zucker",
-            "value": "7g"
+            "value": "7g",
+            "valueIng": 7
           }
         ],
         "similar": [
@@ -360,9 +378,10 @@ export class ItemRepository {
       "co2inmg": "150",
       "sugarcubes": 30,
       "locationaddress": "Zürich, Schweiz",
+      "distanceInKm": 610,
       "price": "1.19 CHF",
       "actionPrice": "0.50 CHF",
-      "pice": "1",
+      "piece": "1",
       "Weight": "33 Gramm",
       "ingreedients": "Aufguss aus Schwarztee und Hagebutten/ Karkadeblüten, Zucker, Fruchtzucker, Zitronensaft aus Konzentrat 2.7%, Traubenzucker",
       "nutrition": [
@@ -380,7 +399,8 @@ export class ItemRepository {
         },
         {
           "title": "Zucker",
-          "value": "2g"
+          "value": "2g",
+          "valueIng": 2
         }
       ],
       "similar": [
@@ -399,6 +419,7 @@ export class ItemRepository {
       "co2inmg": "1500",
       "sugarcubes": 0,
       "locationaddress": "Zürich, Schweiz",
+      "distanceInKm": 10312,
       "price": "0.65 CHF",
       "actionPrice": "0.40 CHF",
       "piece": "6",
@@ -444,6 +465,7 @@ export class ItemRepository {
     this.items.push(vittel);
     this.items.forEach((el, i, orig) => {
       orig[i].id = orig[i].ean;
+      orig[i].currency = orig[i].price.split(' ')[1];
       orig[i].priceString = orig[i].price;
       orig[i].price = orig[i].price.split(' ')[0];
       orig[i].actionPriceString = orig[i].actionPrice;
