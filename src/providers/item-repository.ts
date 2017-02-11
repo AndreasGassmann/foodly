@@ -9,7 +9,7 @@ export class ItemRepository {
     let blevita5korngebaeck = {
       "ean": 7617400033557,
       "title": "Blévita 5-Korngebäck",
-      "image": "assets/img/products/product-54445.png",
+      "image": "assets/img/product/product-54445.png",
       "co2inmg": "1500",
       "sugarcubes": 52,
       "locationaddress": "Zürich, Schweiz",
@@ -47,7 +47,7 @@ export class ItemRepository {
     let blevitadinkelgebaeck = {
       "ean": 7617400036299,
       "title": "Blévita Dinkelgebäck",
-      "image": "assets/img/product-121310.png",
+      "image": "assets/img/product/product-121310.png",
       "co2inmg": "60",
       "sugarcubes": 5,
       "locationaddress": "Zürich, Schweiz",
@@ -162,7 +162,7 @@ export class ItemRepository {
     let farmersoftapfel = {
       "ean": 7613269185758,
       "title": "Farmer Soft Apfel",
-      "image": "assets/img/product/product-51542.jpg",
+      "image": "assets/img/product/product-51542.png",
       "co2inmg": "1500",
       "sugarcubes": 20,
       "locationaddress": "Zürich, Schweiz",
@@ -200,7 +200,7 @@ export class ItemRepository {
     let farmersoftchocnatural = {
       "ean": 7613269185772,
       "title": "Farmer Soft Choch Natural",
-      "image": "assets/img/product/product-51547.jpg",
+      "image": "assets/img/product/product-51547.png",
       "co2inmg": "60",
       "sugarcubes": 5,
       "locationaddress": "Zürich, Schweiz",
@@ -238,7 +238,7 @@ export class ItemRepository {
     let mclassicorangensaft = {
       "ean": 7613312052358,
       "title": "M-Classic Orangensaft 25cl",
-      "image": "assets/img/product/product-228762.jpg",
+      "image": "assets/img/product/product-228762.png",
       "co2inmg": "1500",
       "sugarcubes": 52,
       "locationaddress": "Zürich, Schweiz",
@@ -277,7 +277,7 @@ export class ItemRepository {
     let migrosaprozclassic = {
       "ean": 7617500014401,
       "title": "Migros Aproz Classic",
-      "image": "assets/img/product/product-56835.jpg",
+      "image": "assets/img/product/product-56835.png",
       "co2inmg": "30",
       "sugarcubes": 0,
       "locationaddress": "Zürich, Schweiz",
@@ -316,7 +316,7 @@ export class ItemRepository {
     let migrosbioicetea = {
         "ean": 12131415,
         "title": "Migros Bio Ice Tea Glückstee",
-        "image": "assets/img/product/product-107762.jpg",
+        "image": "assets/img/product/product-107762.png",
         "co2inmg": "800",
         "sugarcubes": 1,
         "locationaddress": "Zürich, Schweiz",
@@ -356,7 +356,7 @@ export class ItemRepository {
     let migrosicetea = {
       "ean": 76168352,
       "title": "Migros Ice Tea",
-      "image": "assets/img/product/product-82915.jpg",
+      "image": "assets/img/product/product-82915.png",
       "co2inmg": "150",
       "sugarcubes": 30,
       "locationaddress": "Zürich, Schweiz",
@@ -395,7 +395,7 @@ export class ItemRepository {
     let vittel = {
       "ean": 3048431002696,
       "title": "Vittel, Mineralwasser ohne Kohlensäure 50cl",
-      "image": "assets/img/product/product-8060.jpg",
+      "image": "assets/img/product/product-8060.png",
       "co2inmg": "1500",
       "sugarcubes": 0,
       "locationaddress": "Zürich, Schweiz",
