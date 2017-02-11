@@ -36,8 +36,8 @@
     </ion-slides>
 </ion-content>
 
-<ion-footer *ngIf="lastId == 0">
-  <ion-card tappable (click)="openDetail()">
+<ion-footer>
+  <ion-card *ngIf="lastId > 0" tappable (click)="openDetail()">
       <div class="card-last">
       <div class="card-last__img">
         <img src="{{ products[lastId] }}">
@@ -58,7 +58,7 @@
         </button>
       </ion-col>
       <ion-col>
-        <button (click)="lastId = 0" ion-button icon-left clear small>
+        <button (click)="resetCamera()" ion-button icon-left clear small>
           <ion-icon name="close"></ion-icon>
           <div>Abbrechen</div>
         </button>
@@ -66,4 +66,23 @@
     </ion-row>
 
   </ion-card>
+  <ion-toolbar class="my-toolbar">
+    <ion-row>
+      <ion-col width-33 center text-center>
+        <button ion-button color="dark" clear>
+          <ion-icon name='home'></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col width-33 center text-center>
+        <button ion-button color="dark" clear>
+          <ion-icon name='home'></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col width-33 center text-center>
+        <button ion-button color="dark" clear>
+          <ion-icon name='home'></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
 </ion-footer>
