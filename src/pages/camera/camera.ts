@@ -26,7 +26,6 @@ export class CameraPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository, private cartSerivce: CartService, public toastCtrl: ToastController, private platform: Platform) {
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
-
       if(this.platform.is('android')){
         this.openScanner();
       }
@@ -35,7 +34,11 @@ export class CameraPage {
     localStorage.setItem("firstStart", "no");
   }
 
-  ionViewDidLoad() {
+  ionViewDidEnter(){
+    //this.initCamera();
+  }
+
+  initCamera(){
     let self = this;
 
     if (MediaStreamTrack.getSources) {
@@ -67,22 +70,22 @@ export class CameraPage {
               });
 
 
-              Quagga.onDetected(data => {
-                self.zone.run(() => {
-                  self.lastId = data.codeResult.code;
-                  self.item = self._itemRepository.getItemByEan(data.codeResult.code);
-                  if(self.item == null) return;
-                  self.similars = [];
+            Quagga.onDetected(data => {
+              self.zone.run(() => {
+                self.lastId = data.codeResult.code;
+                self.item = self._itemRepository.getItemByEan(data.codeResult.code);
+                if(self.item == null) return;
+                self.similars = [];
 
-                  for(var i = 0; i < self.item.similar.length; i++){
-                    var similar = self._itemRepository.getItemByEan(self.item.similar[i]);
-                    if(similar != null){
-                      self.similars.push(similar);
-                    }
+                for(var i = 0; i < self.item.similar.length; i++){
+                  var similar = self._itemRepository.getItemByEan(self.item.similar[i]);
+                  if(similar != null){
+                    self.similars.push(similar);
                   }
+                }
 
-                });
               });
+            });
 
             return;
           }
@@ -145,6 +148,11 @@ export class CameraPage {
       });
 
     }
+  }
+
+
+  ionViewDidLoad() {
+    this.initCamera();
   }
 
   addProduct(item) {

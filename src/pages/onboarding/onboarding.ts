@@ -22,7 +22,7 @@ export class OnboardingPage {
 
   public setClientType(type) {
     localStorage.setItem('clientType', type);
-    this.navCtrl.push(CameraPage);
+    this.navCtrl.setRoot(CameraPage);
   }
 
 }
