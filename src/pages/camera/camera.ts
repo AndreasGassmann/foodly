@@ -19,12 +19,10 @@ export class CameraPage {
   @ViewChild(Slides) slides: Slides;
 
   private lastId = 0;
-  private item = {};
+  public item = null;
+  public similars = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private _itemRepository: ItemRepository) {
-
-    // TODO: REMOVE, JUST AS A PLACEHOLDER FOR TESTING
-    this.item = this._itemRepository.getItemByEan(7640150491001);
 
     if (!localStorage.getItem("firstStart")) {
       this.navCtrl.push(OnboardingPage);
@@ -73,6 +71,16 @@ export class CameraPage {
                 self.zone.run(() => {
                   self.lastId = data.codeResult.code;
                   self.item = self._itemRepository.getItemByEan(data.codeResult.code);
+                  if(self.item == null) return;
+                  self.similars = [];
+
+                  for(var i = 0; i < self.item.similar.length; i++){
+                    var similar = self._itemRepository.getItemByEan(self.item.similar[i]);
+                    if(similar != null){
+                      self.similars.push(similar);
+                    }
+                  }
+
                 });
               });
 
@@ -119,12 +127,22 @@ export class CameraPage {
         });
 
 
-        Quagga.onDetected(data => {
-          self.zone.run(() => {
-            self.lastId = data.codeResult.code;
-            self.item = self._itemRepository.getItemByEan(data.codeResult.code);
-          });
+      Quagga.onDetected(data => {
+        self.zone.run(() => {
+          self.lastId = data.codeResult.code;
+          self.item = self._itemRepository.getItemByEan(data.codeResult.code);
+          if(self.item == null) return;
+          self.similars = [];
+
+          for(var i = 0; i < self.item.similar.length; i++){
+            var similar = self._itemRepository.getItemByEan(self.item.similar[i]);
+            if(similar != null){
+              self.similars.push(similar);
+            }
+          }
+
         });
+      });
 
     }
   }
