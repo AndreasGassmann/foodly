@@ -51,7 +51,7 @@ export class CartService {
    */
   public increaseQuantity(productId, amount) {
     let self = this;
-    this.cartItems.forEach(function (element, index, cartItems) {
+    this.cartItems.forEach(function (element, index) {
       if(element.id == productId) {
         self.cartItems[index].quantity = parseInt(element.quantity) + parseInt(amount);
       }
