@@ -19,7 +19,7 @@
           <img src="{{ item.image }}">
         </ion-avatar>
         <h2>quantity: {{ item.quantity }} id: {{ item.id }}</h2>
-        <h3>{{ item.currency }} {{ item.price.toFixed(2) }}</h3>
+        <h3>{{ item.currency }} {{ getPriceWithDecimal(item.price) }}</h3>
         <p>{{ item.category }}</p>
       </ion-item>
       <ion-item-options side="right">

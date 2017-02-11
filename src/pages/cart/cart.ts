@@ -52,6 +52,14 @@ export class CartPage {
     return count;
   }
 
+  getPriceWithDecimal(price) {
+    if (price) {
+      return price.toFixed(2);
+    } else {
+      return 0;
+    }
+  }
+
   getCurrency() {
     return 'CHF';
   }
