@@ -15,7 +15,6 @@ export class CartService {
         if(parseInt(item.id) == parseInt(productObject.id)) {
           item.quantity = productObject.quantity + 1;
           found = true;
-
         } else if (found == false) {
           cartItems.push(productObject);
         }
