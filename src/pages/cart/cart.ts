@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import {CartService} from "../../providers/cart-service";
 import {DetailPage} from "../detail/detail";
+import {CheckoutPage} from "../checkout/checkout";
 
 /*
   Generated class for the Cart page.
@@ -64,4 +65,7 @@ export class CartPage {
     return 'CHF';
   }
 
+  openCheckout() {
+    this.navCtrl.push(CheckoutPage);
+  }
 }
