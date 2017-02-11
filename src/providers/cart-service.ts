@@ -9,11 +9,14 @@ export class CartService {
    */
   public addProduct(productObject) {
     let cartItems = this.getCartItems();
+    let found = false;
     if(cartItems.length > 0) {
       cartItems.forEach(function (item) {
         if(parseInt(item.id) == parseInt(productObject.id)) {
           item.quantity = productObject.quantity + 1;
-        } else {
+          found = true;
+          
+        } else if (found == false) {
           cartItems.push(productObject);
         }
       });
