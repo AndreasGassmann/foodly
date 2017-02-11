@@ -26,7 +26,11 @@ page-cart {
       }
     }
 
-    h3 {
+      .title {
+          font-family: "Montserrat Bold";
+      }
+
+    .price {
       margin-left: auto;
       margin-bottom: 8px;
     }
