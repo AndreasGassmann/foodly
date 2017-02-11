@@ -13,10 +13,12 @@ export class UmweltPage {
   @ViewChild('googleMap') mapElement: ElementRef;
   map: any;
   item: any;
+  matches: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _cartService: CartService, public domSanitizer: DomSanitizer) {
     console.log(this.navParams.get('item'));
     this.item = this.navParams.get('item');
+    this.matches = this._cartService.getSimilarSortedByMoney(this.item.id);
   }
 
   ionViewDidLoad() {
@@ -25,6 +27,18 @@ export class UmweltPage {
 
   back(){
     this.navCtrl.parent.parent.pop();
+  }
+
+  public getFirst() {
+    return this.matches[0];
+  }
+
+  public getSecond() {
+    return this.matches[1];
+  }
+
+  public getThird() {
+    return this.matches[2];
   }
 
   /**

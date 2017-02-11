@@ -14,9 +14,23 @@ import { CartService } from "../../providers/cart-service";
 })
 export class HealthTabPage {
   item: any;
+  matches: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _cartService: CartService) {
     this.item = this.navParams.get('item');
+    this.matches = this._cartService.getSimilarSortedByMoney(this.item.id);
+  }
+
+  public getFirst() {
+    return this.matches[0];
+  }
+
+  public getSecond() {
+    return this.matches[1];
+  }
+
+  public getThird() {
+    return this.matches[2];
   }
 
   ionViewDidLoad() {

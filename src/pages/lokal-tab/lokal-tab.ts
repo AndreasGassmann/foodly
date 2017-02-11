@@ -9,9 +9,11 @@ declare let google;
 })
 export class LokalTabPage {
   item: any;
+  matches: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private _cartService: CartService) {
     this.item = this.navParams.get('item');
+    this.matches = this._cartService.getSimilarSortedByMoney(this.item.id);
   }
 
   /**
@@ -19,6 +21,18 @@ export class LokalTabPage {
    */
   @ViewChild('googleMap') mapElement: ElementRef;
   map: any;
+
+  public getFirst() {
+    return this.matches[0];
+  }
+
+  public getSecond() {
+    return this.matches[1];
+  }
+
+  public getThird() {
+    return this.matches[2];
+  }
 
   /**
    * Loads the map with a custom stylesheet
