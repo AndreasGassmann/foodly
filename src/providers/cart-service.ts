@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/map';
+import {ItemRepository} from "./item-repository";
 
 @Injectable()
 export class CartService {
+
+  constructor(private _itemRepository: ItemRepository) {}
 
   /**
    * @param productObject
@@ -76,4 +79,24 @@ export class CartService {
   private updateCart(cartItems) {
     localStorage.setItem('actualCart', JSON.stringify(cartItems));
   }
+
+  getSimilarSortedByMoney(ean) {
+    let similars = this._itemRepository.getSimilars(ean);
+
+    similars.sort((a, b) => {
+      if (a.price < b.price) {
+        return -1;
+      }
+      if (a.price > b.price) {
+        return 1;
+      }
+      // a must be equal to b
+      return 0;
+    });
+
+    return similars;
+  }
+
+
+
 }
