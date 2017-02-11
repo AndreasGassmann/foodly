@@ -23,7 +23,7 @@ export class HealthTabPage {
     console.log('ionViewDidLoad HealthTabPage');
   }
 
-  back(){
+  back() {
     this.navCtrl.parent.parent.pop();
   }
 

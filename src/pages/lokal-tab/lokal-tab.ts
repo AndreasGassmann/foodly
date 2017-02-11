@@ -23,7 +23,7 @@ export class LokalTabPage {
     console.log('ionViewDidLoad LokalTabPage');
   }
 
-  back(){
+  back() {
     this.navCtrl.parent.parent.pop();
   }
 

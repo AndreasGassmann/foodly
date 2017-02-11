@@ -16,12 +16,13 @@ export class HomePage {
     this.item = this.navParams.get('item');
   }
 
-  back(){
+  back() {
     this.navCtrl.parent.parent.pop();
   }
 
   addToCart() {
     this._cartService.addProduct(this.item);
+    this.back();
   }
 
 }

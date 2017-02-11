@@ -40,9 +40,10 @@ export class CartService {
    * @param productId
    */
   public removeProduct(productId) {
+    // TODO: Something doesn't work here
     this.cartItems.forEach(function (element, index, cartItems) {
       if(element.id == productId) {
-       cartItems.splice(cartItems.indexOf(index), 1);
+       cartItems.splice(index, 1);
       }
     });
     this.updateCart();
