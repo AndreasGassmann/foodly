@@ -80,4 +80,10 @@ page-camera {
     }
   }
 
+    .card-last {
+        &__img {
+            max-width: 60%;
+        }
+    }
+
 }
