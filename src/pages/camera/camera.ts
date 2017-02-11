@@ -29,8 +29,8 @@ export class CameraPage {
     }
     localStorage.setItem("firstStart", "no");
 
-    this.lastId = 7613269186014;
-    this.item = this._itemRepository.getItemByEan(7613269186014);
+    this.lastId = 7617400033557;
+    this.item = this._itemRepository.getItemByEan(7617400033557);
   }
 
   ionViewDidLoad() {
