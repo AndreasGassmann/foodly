@@ -18,6 +18,7 @@ import {OnboardingPage} from "../pages/onboarding/onboarding";
 import {SlidesPage} from "../pages/slides/slides";
 import {CartPage} from "../pages/cart/cart";
 import {CartService} from "../providers/cart-service";
+import {SuccessPage} from "../pages/success/success";
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import {CartService} from "../providers/cart-service";
     CartPage,
     HealthTabPage,
     LokalTabPage,
-    SparfuchsTabPage
+    SparfuchsTabPage,
+    SuccessPage
   ],
   imports: [
     IonicModule.forRoot(MyApp, { mode:'md', tabsPlacement: 'top' })
@@ -57,7 +59,8 @@ import {CartService} from "../providers/cart-service";
     CartPage,
     HealthTabPage,
     LokalTabPage,
-    SparfuchsTabPage
+    SparfuchsTabPage,
+    SuccessPage
   ],
   providers: [
     {

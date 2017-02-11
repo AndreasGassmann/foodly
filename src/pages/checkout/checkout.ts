@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {DetailPage} from "../detail/detail";
 import {CartService} from "../../providers/cart-service";
+import {SuccessPage} from "../success/success";
 
 /*
  Generated class for the Checkout page.
@@ -22,5 +23,9 @@ export class CheckoutPage {
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad CheckoutPage');
+    }
+
+    openSuccess() {
+      this.navCtrl.push(SuccessPage);
     }
 }

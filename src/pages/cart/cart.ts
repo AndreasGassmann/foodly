@@ -21,7 +21,6 @@ export class CartPage {
     this.cartItems = this.cartService.getCartItems();
   }
 
-
   ionViewDidLoad() {
     console.log('ionViewDidLoad CartPage');
   }
