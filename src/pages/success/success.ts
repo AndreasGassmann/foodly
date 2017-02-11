@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+declare var money_rain;
 /*
   Generated class for the Success page.
 
@@ -13,10 +13,19 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class SuccessPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+  }
 
   ionViewDidLoad() {
+
     console.log('ionViewDidLoad SuccessPage');
+
+  }
+  ionViewDidEnter() {
+    console.log('ionVieqDidEnter');
+    money_rain();
+    console.log('ani');
   }
 
 }
