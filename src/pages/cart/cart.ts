@@ -26,6 +26,22 @@ export class CartPage {
     console.log('ionViewDidLoad CartPage');
   }
 
+  /**
+   * @returns {int}
+   */
+  public getTotalPrice()
+  {
+    let totalPrice = 0;
+    this.cartItems.forEach(function (element) {
+      if(element.quantity > 0) {
+        totalPrice += parseInt(element.price) * parseInt(element.quantity)
+      } else {
+        totalPrice += parseInt(element.price);
+      }
+    });
+    return totalPrice;
+  }
+
   openDetail(item) {
     this.navCtrl.push(TabsPage, {
       item: item
@@ -51,14 +67,6 @@ export class CartPage {
       count += i.quantity;
     });
     return count;
-  }
-
-  getPriceWithDecimal(price) {
-    if (price) {
-      return price.toFixed(2);
-    } else {
-      return 0;
-    }
   }
 
   getCurrency() {
