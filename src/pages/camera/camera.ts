@@ -36,6 +36,9 @@ export class CameraPage {
 
   ionViewDidEnter() {
     //this.initCamera();
+    this.lastId = 7617400033557;
+    this.item = this._itemRepository.getItemByEan(7617400033557);
+
   }
 
 
@@ -218,13 +221,15 @@ export class CameraPage {
   openScanner() {
     cordova.plugins.barcodeScanner.scan(
       function (result) {
+        /*
         alert("We got a barcode\n" +
           "Result: " + result.text + "\n" +
           "Format: " + result.format + "\n" +
           "Cancelled: " + result.cancelled);
+          */
       },
       function (error) {
-        alert("Scanning failed: " + error);
+        //alert("Scanning failed: " + error);
       },
       {
         preferFrontCamera: false, // iOS and Android
