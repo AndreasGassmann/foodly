@@ -40,7 +40,7 @@ import {SuccessPage} from "../pages/success/success";
     SuccessPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp, { mode:'md', tabsPlacement: 'top' })
+    IonicModule.forRoot(MyApp, {prodMode: true, mode:'md', tabsPlacement: 'top' })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
