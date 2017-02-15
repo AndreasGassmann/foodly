@@ -486,26 +486,32 @@ export class ItemRepository {
   }
 
   getSimilar(ean) {
+
     console.log('getSimilar', ean);
     let filtered = this.items.filter(i => i.ean == ean);
     console.log('getSimilarFiltered', filtered);
-
     if (filtered.length === 1) {
       console.log('returning similars', filtered[0].similar);
-      return filtered[0].similar;
+      //ns remove duplicate items
+        var unique = filtered[0].similar.filter(function(elem, index, self) {
+            return index == self.indexOf(elem);
+        })
+      return unique;
     } else {
       return [];
     }
   }
 
   getSimilars(ean) {
-    console.log('getSimilars ean:', ean);
+  //  console.log('getSimilars ean:', ean);
     let similarProducts = [];
     let similars = this.getSimilar(ean);
-    console.log('getSimilars', similars);
+
+    //console.log('getSimilars', similars);
     similars.push(ean);
     if (similars) {
       similars.forEach(i => {
+
         similarProducts.push(this.getItemByEan(i));
       });
     }
