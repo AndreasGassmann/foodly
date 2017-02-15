@@ -9,7 +9,7 @@ Scan the QR or Download the APK [here](https://github.com/AndreasGassmann/AllAbo
 
 # Usage
 
-The first time you start the app, the scanner will shop up, please give it premission to the camera. <b>It is sometimes necesarry to restart the app after this first permission request. In the screen remains black, just close the app and start it again.</b>
+The first time you start the app, the scanner will shop up, please give it permission to the camera. <b>It is sometimes necessary to restart the app after this first permission request. In the screen remains black, just close the app and start it again.</b>
 
 Scan one of these barcodes:
 
