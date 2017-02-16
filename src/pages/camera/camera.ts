@@ -36,8 +36,8 @@ export class CameraPage {
 
   ionViewDidEnter() {
     //this.initCamera();
-    this.lastId = 7617400033557;
-    this.item = this._itemRepository.getItemByEan(7617400033557);
+  //  this.lastId = 7617400033557;
+    //this.item = this._itemRepository.getItemByEan(7617400033557);
 
   }
 

@@ -28,7 +28,7 @@ export class SuccessPage {
     } else {
       // umwelt
     }
-
+    this.cattype = parseInt(localStorage.getItem('clientType'));
   }
 
   ionViewDidLoad() {
